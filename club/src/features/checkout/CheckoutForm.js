@@ -61,7 +61,7 @@ export default function CheckoutForm(props) {
 			},
 		},
 	}
-	const sendOrder = () => {
+	const sendOrder = async e => {
 		const order = {
 			cart: cart,
 			shippingInfo: shippingInfo,
@@ -150,7 +150,7 @@ export default function CheckoutForm(props) {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-			sendOrder()
+			await sendOrder()
 
 			dispatch(resetCart())
 			console.log(payload, 'wanna add?')
