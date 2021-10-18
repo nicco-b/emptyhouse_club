@@ -39,7 +39,7 @@ const App = () => {
 		fontActive: '#5a6865',
 		boxBG: '#F7F7F790',
 		wallpaperBg: '#dfc9a6',
-		bg: '#E1E1E1',
+		bg: '#EFEDE7',
 		wallpaper: '/grass4.jpg',
 		objFilter: 'brightness(100%)',
 	}
