@@ -13,7 +13,7 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 export const getPage = () => dispatch => {
 	dispatch(setPageLoading())
-	axios.get(`${API_ENDPOINT}/api/pages`).then(res =>
+	axios.get(`assets.emptyhouseclub.com/api/pages`).then(res =>
 		dispatch({
 			type: GET_PAGE,
 			payload: res.data,
