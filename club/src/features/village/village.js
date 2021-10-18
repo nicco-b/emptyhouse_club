@@ -52,7 +52,7 @@ const Plants = [
 		id: 1,
 		left: '35%',
 		top: '-13%',
-		zIndex: '1',
+		zIndex: '0',
 		width: '20%',
 		image: 'roundtree.png',
 		name: 'roundtree',
