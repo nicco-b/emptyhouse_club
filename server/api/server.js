@@ -51,7 +51,7 @@ server.use(
 	orders
 )
 server.get('/', (req, res) => {
-	res.status(200).json('assets.emptyhouseclub.com')
+	res.status(200).json('assets.emptyhouseclub.com v1')
 })
 
 server.use('*', (req, res, next) => {

@@ -12,6 +12,7 @@ export const BaseCart = styled.div`
 		padding-top: 2em;
 	}
 `
+//s
 export const CartProducts = styled.div`
 	display: grid;
 	gap: 1em;
