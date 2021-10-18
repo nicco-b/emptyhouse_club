@@ -7,7 +7,7 @@ on:
  push:
   branches: [main]
   paths:
-   - './server/**'
+   - 'server/**'
 
 jobs:
  build:
