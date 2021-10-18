@@ -99,7 +99,7 @@ export default function CheckoutForm(props) {
 				Total: TotalCart,
 			}
 			axios
-				.post(`${API_ENDPOINT}/api/orders`, order)
+				.post(`https://assets.emptyhouseclub.com/api/orders`, order)
 				.then(res => {
 					return res.data
 				})
