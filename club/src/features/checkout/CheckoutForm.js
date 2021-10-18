@@ -70,6 +70,7 @@ export default function CheckoutForm(props) {
 		axios
 			.post(`${API_ENDPOINT}/api/orders`, order)
 			.then(res => {
+				console.log(order, 'here')
 				return res.data
 			})
 			.catch(err => {
