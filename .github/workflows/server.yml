@@ -1,0 +1,39 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: server
+
+on:
+ push:
+  branches: [main]
+  paths:
+   - 'server/**'
+
+jobs:
+ build:
+  runs-on: self-hosted
+
+  strategy:
+   matrix:
+    node-version: [14.x]
+    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+  steps:
+   - uses: actions/checkout@v2
+   - name: Use Node.js ${{ matrix.node-version }}
+
+     uses: actions/setup-node@v2
+     with:
+      node-version: ${{ matrix.node-version }}
+
+   - run: npm i  --prefix ./server
+
+#    - run: cd ./apps/ &&  rsync -a backend/  ../../../../../public/backend
+
+#    - run: cd ../../../../public/backend && pwd && NODE_ENV=production pm2 reload server.js --update-env
+#      env:
+#       DB_URI: ${{ secrets.DB_URI }}
+#       DISK_URL: ${{ secrets.DISK_URL }}
+#       MONGO_URL: ${{ secrets.MONGO_URL }}
+#       GREP_CMD: ${{secrets.GREP_CMD}}
+#       HTTP: ${{secrets.HTTP}}
