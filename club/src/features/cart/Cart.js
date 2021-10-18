@@ -69,7 +69,6 @@ export const Cart = () => {
 	// 	console.log(getCartProducts(cart))
 	// }, [])
 
-	// console.log(cart)
 	useEffect(() => {
 		const getRegistrations = async event => {
 			// (async () => {
