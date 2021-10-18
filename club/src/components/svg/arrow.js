@@ -11,18 +11,18 @@ export const Arrow = ({ length, height, transform, stroke, clas }) => {
 				<path
 					d='M19 12H5'
 					stroke='black'
-					stroke-opacity='0.61'
-					stroke-width='2'
-					stroke-linecap='round'
-					stroke-linejoin='round'
+					strokeOpacity='0.61'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
 				/>
 				<path
 					d='M12 19L5 12L12 5'
 					stroke='black'
-					stroke-opacity='0.64'
-					stroke-width='2'
-					stroke-linecap='round'
-					stroke-linejoin='round'
+					strokeOpacity='0.64'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
 				/>
 			</svg>
 		</>

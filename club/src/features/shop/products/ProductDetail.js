@@ -16,6 +16,7 @@ import {
 	PDetailDescription,
 	PDetailPrice,
 	PDetailTitle,
+	PPageDescription,
 	ProductDetailDetails,
 	ProductDetailGrid,
 	ProductDetailImages,
@@ -109,8 +110,14 @@ export const ProductDetail = () => {
 									<PDetailDescription>
 										<b>{product.description}</b>
 									</PDetailDescription>
+									<ul>
+										<PPageDescription>
+											{product.parentPage.pageDescription.map(ea => (
+												<li>{ea}</li>
+											))}
+										</PPageDescription>
+									</ul>
 
-									<PDetailDescription>{product.parentPage.pageDescription}</PDetailDescription>
 									<PDetailBottomBox>
 										<PDetailDescription>
 											<div

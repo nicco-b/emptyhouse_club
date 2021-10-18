@@ -153,6 +153,9 @@ export const CartShipping = styled.div`
 `
 export const SumItemTitle = styled.div`
 	font-weight: 700;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `
 export const UnderSummary = styled.div`
 	grid-column: 2;
@@ -191,7 +194,7 @@ export const CartSumProductItem = styled.div`
 	display: grid;
 	grid-auto-flow: column;
 	align-items: center;
-	grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+	grid-template-columns: 0.5fr 2fr 1fr 1fr;
 	height: 2em;
 	padding: 0em 0.5em;
 `

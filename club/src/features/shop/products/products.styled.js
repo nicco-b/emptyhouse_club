@@ -89,7 +89,7 @@ export const ProductDetailLeft = styled.div`
 export const ProductDetailRight = styled.div`
 	display: grid;
 	height: fit-content;
-	grid-template-rows: 1fr 1fr 1fr 0.5fr 3fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 6fr 1fr;
 	/* padding: 1em; */
 	gap: 1em;
 `
@@ -120,11 +120,17 @@ export const PDetailPrice = styled.h3`
 export const PDetailDescription = styled.p`
 	display: grid;
 `
+export const PPageDescription = styled.ul`
+	display: grid;
+	> li {
+		padding-bottom: 1em;
+	}
+`
 export const PDetailBottomBox = styled.div`
 	display: grid;
 `
 export const PThumbTitle = styled.div`
-	font-weight: 700;
+	font-weight: 600;
 `
 
 export const PThumbnail = styled.img.attrs(props => ({

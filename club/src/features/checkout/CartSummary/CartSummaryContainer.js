@@ -46,7 +46,7 @@ export const CartSummaryContainer = props => {
 														<b style={{ fontSize: '0.8em' }}>{getQuantity(cart, c._id)}</b>
 													</div>
 													<SumItemTitle>{c.title}</SumItemTitle>
-													<div style={{ color: '#acadac ' }}>{c.page}</div>
+													{/* <div style={{ color: '#acadac ' }}>{c.page}</div> */}
 
 													<div style={{ display: 'grid', justifyItems: 'end', color: '#acadac ' }}>
 														{convertToUsd(c.pricing.price)}
