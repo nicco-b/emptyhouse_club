@@ -31,6 +31,7 @@ import {
 	CartThumb,
 	CartTitle,
 	CartTotal,
+	IncrementButtonBox,
 	LineSeparator,
 	RightBottomBox,
 	RightTopBox,
@@ -40,6 +41,8 @@ import {
 import { Line15 } from '../../components/Line 14'
 import { CartSummaryContainer } from '../checkout/CartSummary/CartSummaryContainer'
 import { Button } from '../../app/app.styled'
+import { Plus } from '../../components/svg/plus'
+import { Minus } from '../../components/svg/minus'
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 export const Cart = () => {
@@ -97,7 +100,7 @@ export const Cart = () => {
 			//need more redux actions for this cart stuff
 			console.log(registrations, 'rrrr')
 
-			setProd(registrations.flat())
+			setProd(registrations.reduce((acc, curr) => acc.concat(curr), []))
 		}
 
 		getRegistrations()
@@ -105,6 +108,8 @@ export const Cart = () => {
 		// 	setProd([])
 		// }
 	}, [cart.addedIds])
+	console.log(prod, 'PENIS BOY')
+
 	useEffect(() => {
 		const getCarrt = async () => {
 			const prodf = await prod
@@ -208,16 +213,16 @@ export const Cart = () => {
 																<BottomBox>
 																	<ButtonBox>
 																		{getQuantity(cart, c._id) > 1 && (
-																			<button onClick={() => handleRemove(c)} style={{ cursor: 'pointer' }}>
-																				-
-																			</button>
+																			<IncrementButtonBox onClick={() => handleRemove(c)}>
+																				<Minus>-</Minus>
+																			</IncrementButtonBox>
 																		)}
 																		<div>
 																			<b style={{ fontSize: '0.8em' }}>{getQuantity(cart, c._id)}</b>
 																		</div>
-																		<button onClick={() => dispatch(addToCart(c))} style={{ cursor: 'pointer' }}>
-																			+
-																		</button>
+																		<IncrementButtonBox onClick={() => dispatch(addToCart(c))}>
+																			<Plus>+</Plus>
+																		</IncrementButtonBox>
 																	</ButtonBox>
 																	<RightBottomBox>
 																		<div

@@ -13,6 +13,13 @@ export const BaseCart = styled.div`
 	}
 `
 //s
+export const IncrementButtonBox = styled.div`
+	background-color: var(--box-color);
+	border: 1px solid var(--box-border);
+	display: grid;
+	cursor: pointer;
+	border-radius: 2px;
+`
 export const CartProducts = styled.div`
 	display: grid;
 	gap: 1em;
@@ -96,6 +103,12 @@ export const ButtonBox = styled.div`
 	grid-auto-flow: column;
 	justify-items: center;
 	align-items: center;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
 `
 export const CartItemTitle = styled.h3`
 	font-weight: 700;

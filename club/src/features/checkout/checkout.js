@@ -11,6 +11,7 @@ import {
 	CartSumSubHeader,
 	CartSumTitle,
 	CartTitle,
+	IncrementButtonBox,
 	LineSeparator,
 	SumItemTitle,
 } from '../cart/cart.styled'
@@ -31,6 +32,7 @@ import { RadioInput } from '../../components/inputs/RadioInput'
 import { ShippingType } from './ShippingType'
 import { CartSummaryContainer } from './CartSummary/CartSummaryContainer'
 import { useHistory } from 'react-router-dom'
+import { Arrow } from '../../components/svg/arrow'
 const ShippingInfo = {
 	firstName: '',
 	lastName: '',
@@ -161,17 +163,19 @@ export const Checkout = () => {
 							<PageTitleBox>
 								<PageTitle>
 									{shipping && !pay ? (
-										<div style={{ cursor: 'pointer', fontWeight: 900 }} onClick={() => setShipping(false)}>
-											{'<'}
-										</div>
+										<IncrementButtonBox onClick={() => setShipping(false)}>
+											<Arrow />
+										</IncrementButtonBox>
+									) : pay ? (
+										<IncrementButtonBox onClick={() => setPay(false)}>
+											<Arrow />
+										</IncrementButtonBox>
 									) : (
-										pay && (
-											<div style={{ cursor: 'pointer', fontWeight: 900 }} onClick={() => setPay(false)}>
-												{'<'}
-											</div>
-										)
+										<IncrementButtonBox onClick={() => history.goBack()}>
+											<Arrow />
+										</IncrementButtonBox>
 									)}
-									CHECKOUT
+									<div style={{ display: 'grid' }}>CHECKOUT</div>
 								</PageTitle>
 							</PageTitleBox>
 						</PageHeader>

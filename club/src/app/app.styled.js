@@ -14,8 +14,8 @@ export const Button = styled.button`
 	width: fit-content;
 	padding: 0.5em 2em;
 	cursor: pointer;
-	background-color: white;
-	border: none;
+	background-color: var(--box-color);
+	border: 1px solid var(--box-border);
 	text-transform: uppercase;
 	font-weight: 500;
 	border-radius: 0.3rem;
@@ -23,7 +23,7 @@ export const Button = styled.button`
 	&:hover {
 		background-color: transparent;
 		transition: background-color 0.5s;
-		outline: 1px solid #e7ddb4;
+		outline: 1px solid var(--secondary-box-border);
 	}
 `
 export const Main = styled.main`

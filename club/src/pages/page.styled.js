@@ -7,7 +7,7 @@ export const PageTitle = styled.h1`
 	text-transform: uppercase;
 	display: grid;
 	grid-auto-flow: column;
-
+	align-items: center;
 	gap: 0.5em;
 `
 export const PageTitleBox = styled.div`
