@@ -1,0 +1,31 @@
+name: club
+
+on:
+ push:
+  branches: [main]
+  paths:
+   - 'club/**'
+
+jobs:
+ build:
+  runs-on: self-hosted
+
+  strategy:
+   matrix:
+    node-version: [14.x]
+    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+  steps:
+   - uses: actions/checkout@v2
+   - name: Use Node.js ${{ matrix.node-version }}
+     uses: actions/setup-node@v2
+     with:
+      node-version: ${{ matrix.node-version }}
+
+   - run: npm  i
+
+   - run: npm run build --if-present
+#      env:
+#       REACT_APP_API_ENDPOINT: ${{ secrets.REACT_APP_API_ENDPOINT }}
+#       REACT_APP_STRIPE_PUBLISHABLE_KEY: ${{ secrets.REACT_APP_STRIPE_PUBLISHABLE_KEY}}
+#    - run: cd ./apps/client &&  rsync -a build/  ../../../../../../public/niccob.com/build && rm -rf build/
