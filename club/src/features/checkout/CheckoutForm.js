@@ -156,7 +156,6 @@ export default function CheckoutForm(props) {
 			console.log(payload, 'wanna add?')
 		}
 	}
-
 	return (
 		<Form id='payment-form' onSubmit={handleSubmit}>
 			<CardBox>
