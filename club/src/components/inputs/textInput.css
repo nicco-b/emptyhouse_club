@@ -1,0 +1,207 @@
+/* .text-input {
+	/* color: var(--color-dark-grey);
+	display: flex;
+	font-size: 14px;
+	left: 14px;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: 0.2s ease all; 
+	min-height: 50px;
+	position: relative;
+} */
+:root {
+	--mobile-breakpoint: 450px;
+	--scrollbarBG: #cfd8dc;
+	--thumbBG: #90a4ae;
+	--primary-color: #302ae6;
+	--secondary-color: #536390;
+	--font-color: rgba(0 0 0 / 55%);
+	--secondary-font-color: rgba(58, 58, 58, 0.274);
+
+	--active-nav-text: rgba(58, 58, 58, 0.81);
+	--active-nav-text-box: rgba(114, 114, 114, 0.21);
+	--secondary-box: rgba(196, 196, 196, 0.21);
+	--bg-color: #ececec;
+	--checkbox-color: rgba(196, 196, 196, 0.59);
+	--checkbox-chosen: rgba(47, 47, 47, 0.603);
+
+	--box-color: rgba(255, 255, 255, 0.239);
+	--box-top-color: rgba(255, 255, 255, 0.582);
+
+	--box-border: rgba(0, 0, 0, 0.055);
+	--heading-color: #292922;
+}
+
+[data-theme='dark'] {
+	--secondary-font-color: rgba(255, 255, 255, 0.273);
+
+	--primary-color: #9a97f3;
+	--secondary-color: #818cab;
+	--font-color: rgba(255, 255, 255, 0.58);
+	--active-nav-text: rgba(255, 255, 255, 0.794);
+	--active-nav-text-box: rgba(196, 196, 196, 0.36);
+	--secondary-box: rgb(32, 32, 32);
+
+	--bg-color: #000000;
+	--box-color: rgb(18, 18, 18);
+	--checkbox-color: rgba(196, 196, 196, 0.59);
+	--checkbox-chosen: rgba(47, 47, 47, 0.99);
+
+	--box-border: rgba(148, 148, 148, 0.088);
+	--heading-color: #818cab;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: var(--font-color);
+	/* border: 1px solid green; */
+	/* -webkit-text-fill-color: unset; */
+	font-family: 'Nunito', sans-serif;
+
+	font-weight: 600;
+
+	/* -webkit-box-shadow: unset; */
+	transition: background-color 5000s ease-in-out 0s;
+}
+:-webkit-autofill::first-line {
+	/* font-family: 'Helvetica Neue'; */
+	font-family: 'Nunito', sans-serif;
+
+	font-size: 19px;
+	color: red;
+	font-weight: 600;
+}
+#text-input {
+	display: flex;
+	/* flex-direction: column;
+	position: relative; */
+}
+#field-input {
+	/* display: flex; */
+	/* padding: 1em; */
+	border-radius: 4px;
+	/* padding: 10px 12px 0 12px; */
+	/* flex-direction: column;
+	position: relative; */
+	color: var(--font-color);
+}
+#field-input .field {
+	font-weight: 500;
+	width: 100%;
+	/* height: 40px; */
+	padding: 12px 12px 0 12px;
+	outline: 0;
+	/* padding: 0 12px; */
+	background: var(--box-color);
+
+	border: 1px solid var(--box-border);
+	border-radius: 4px;
+	color: var(--font-color);
+	font-size: 19px;
+}
+#field-input .editor {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	color: var(--font-color);
+	/* background: var(--box-color); */
+}
+#field-input .editor div {
+	color: var(--font-color);
+}
+#field-input label {
+	font-size: 20px;
+
+	padding: 1px 0px;
+	color: var(--font-color);
+	pointer-events: none;
+	position: absolute;
+	transform: translate(0, 0px) scale(1);
+	transform-origin: top left;
+	transition: all 0.2s ease-out;
+}
+#field-input:focus-within label {
+	transform: translate(0, -14px);
+	font-size: 14px;
+
+	color: var(--font-color);
+}
+#field-input .Active {
+	color: var(--secondary-font-color);
+
+	transform: translate(0, -14px);
+
+	font-size: 14px;
+}
+#text-input input {
+	font-weight: 600;
+	width: 100%;
+	height: auto;
+	padding: 20px 12px 4px 12px;
+	outline: 0;
+	/* padding: 0 12px; */
+
+	border: 1px solid var(--box-border);
+	border-radius: 4px;
+	background: var(--box-color);
+	color: var(--font-color);
+	font-size: 19px;
+}
+
+#text-input label {
+	font-size: 20px;
+	padding: 4px 12px;
+	color: var(--font-color);
+	pointer-events: none;
+	position: absolute;
+	transform: translate(0, 15px) scale(1);
+	transform-origin: top left;
+	transition: all 0.2s ease-out;
+}
+
+#text-input:focus-within label {
+	transform: translate(0, 1px);
+	font-size: 14px;
+
+	color: var(--font-color);
+}
+#text-input .Active {
+	color: var(--secondary-font-color);
+
+	transform: translate(0, 1px);
+
+	font-size: 14px;
+}
+.text-field {
+	background: var(--box-color);
+
+	color: var(--font-color);
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0;
+	/* min-height: 50px; */
+	/* padding: 22px 14px 10px 14px; */
+	text-transform: uppercase;
+	width: 100%;
+}
+.text-input_label {
+	color: var(--font-color);
+	display: flex;
+	font-size: 14px;
+	left: 14px;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: 0.2s ease all;
+}
+.sss {
+	padding: 3em;
+}

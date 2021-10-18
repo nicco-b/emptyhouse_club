@@ -1,0 +1,101 @@
+svg.spinner {
+	width: 40px;
+	height: 40px;
+	x: 0px;
+	y: 0px;
+	viewbox: 0 0 10 10;
+}
+svg.spinner circle {
+	fill: transparent;
+	stroke: rgba(0, 0, 0, 0.2549019607843137);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-dasharray: 30.6;
+	-webkit-transform-origin: 20px 20px 0;
+	-moz-transform-origin: 20px 20px 0;
+	-ms-transform-origin: 20px 20px 0;
+	-o-transform-origin: 20px 20px 0;
+	transform-origin: 20px 20px 0;
+	-webkit-animation: spinner 1.5s linear infinite;
+	-moz-animation: spinner 1.5s linear infinite;
+	-ms-animation: spinner 1.5s linear infinite;
+	-o-animation: spinner 1.5s linear infinite;
+	animation: spinner 1.5s linear infinite;
+}
+@-webkit-keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(180deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(360deg);
+		stroke-dashoffset: 100;
+	}
+}
+@-moz-keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 100;
+	}
+	50% {
+		transform: rotate(180deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(360deg);
+		stroke-dashoffset: 100;
+	}
+}
+@-ms-keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 100;
+	}
+	50% {
+		transform: rotate(180deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(360deg);
+		stroke-dashoffset: 100;
+	}
+}
+@-o-keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 100;
+	}
+	50% {
+		transform: rotate(180deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(360deg);
+		stroke-dashoffset: 100;
+	}
+}
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 10;
+	}
+	50% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 100;
+	}
+	100% {
+		transform: rotate(0deg);
+		stroke-dashoffset: 10;
+	}
+}
+
+.uploadspinnerboxs {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	height: 30vh;
+}

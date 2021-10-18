@@ -1,0 +1,52 @@
+svg {
+  /* animation: 2s linear infinite svg-animation; */
+  max-width: 20px;
+}
+
+/* @keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+} */
+
+circle {
+  animation: 3s ease-in-out infinite both circle-animation;
+  display: block;
+  fill: transparent;
+  stroke: #888888a9;
+  stroke-linecap: round;
+  stroke-dasharray: 354;
+  stroke-dashoffset: 350;
+  stroke-width: 10px;
+  transform-origin: 50% 50%;
+}
+
+@keyframes circle-animation {
+  0% {
+    stroke-dashoffset: 350;
+    transform: rotate(0);
+  }
+
+  50%,
+  50% {
+    stroke-dashoffset: 88;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    stroke-dashoffset: 350;
+    transform: rotate(360deg);
+  }
+}
+.uploadspinnerbox {
+  display: inline-block;
+
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  transform: rotate(270deg);
+}
