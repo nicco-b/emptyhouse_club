@@ -146,10 +146,11 @@ export default function CheckoutForm(props) {
 			setProcessing(false)
 			console.log(payload.error.message, 'ERR')
 		} else {
+			sendOrder()
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-			sendOrder()
+
 			dispatch(resetCart())
 			console.log(payload, 'wanna add?')
 		}
