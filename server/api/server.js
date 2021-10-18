@@ -50,7 +50,6 @@ server.use(
 	}),
 	orders
 )
-
 server.get('/', (req, res) => {
 	res.status(200).json('assets.emptyhouseclub.com')
 })
