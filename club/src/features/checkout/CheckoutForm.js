@@ -61,21 +61,7 @@ export default function CheckoutForm(props) {
 			},
 		},
 	}
-	const sendOrder = () => {
-		const order = {
-			cart: cart,
-			shippingInfo: shippingInfo,
-			Total: TotalCart,
-		}
-		axios
-			.post(`${API_ENDPOINT}/api/orders`, order)
-			.then(res => {
-				return res.data
-			})
-			.catch(err => {
-				return console.log(err)
-			})
-	}
+
 	const handleChange = async event => {
 		// Listen for changes in the CardElement
 		// and display any errors as the customer types their card details
@@ -106,6 +92,21 @@ export default function CheckoutForm(props) {
 	// }, [])
 	const handleSubmit = async ev => {
 		ev.preventDefault()
+		const sendOrder = () => {
+			const order = {
+				cart: cart,
+				shippingInfo: shippingInfo,
+				Total: TotalCart,
+			}
+			axios
+				.post(`${API_ENDPOINT}/api/orders`, order)
+				.then(res => {
+					return res.data
+				})
+				.catch(err => {
+					return console.log(err)
+				})
+		}
 		if (!stripe || !elements) {
 			return
 		}
