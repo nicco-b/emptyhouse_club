@@ -32,6 +32,8 @@ import {
 	PageTitle,
 	PageTitleBox,
 } from '../../../pages/page.styled'
+import { Arrow } from '../../../components/svg/arrow'
+import { IncrementButtonBox } from '../../cart/cart.styled'
 
 export const ProductDetail = () => {
 	const { category, id, pageId } = useParams()
@@ -70,9 +72,13 @@ export const ProductDetail = () => {
 							<PageHeader>
 								<PageTitleBox>
 									<PageTitle>
-										<div>back to:</div>
-										{'  '}
-										{product.parentPage && <A to={product.parentPage.path}>{product.parentPage.pageTitle}</A>}
+										{product.parentPage && (
+											<A to={product.parentPage.path}>
+												<IncrementButtonBox>
+													<Arrow />
+												</IncrementButtonBox>
+											</A>
+										)}
 									</PageTitle>
 								</PageTitleBox>
 							</PageHeader>

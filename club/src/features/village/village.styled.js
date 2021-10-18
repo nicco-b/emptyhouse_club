@@ -41,20 +41,20 @@ export const Ground = styled.div`
 		height: 13em;
 	}
 	@media (min-height: 600px) {
-		min-width: 25em;
+		min-width: 40em;
 		height: 17em;
 	}
 	@media (min-height: 800px) {
 		min-width: 30em;
-		height: 17em;
+		height: 20em;
 	}
 	@media (max-width: 600px) {
 		min-width: 20em;
 		height: 12.5em;
 	}
 	@media (max-width: 500px) {
-		min-width: 17em;
-		height: 11em;
+		min-width: 22em;
+		height: 15em;
 	}
 	@media (min-width: 800px) and (min-height: 800px) {
 		min-width: 36em;
