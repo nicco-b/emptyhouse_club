@@ -38,6 +38,7 @@ export const getPage = () => dispatch => {
 // }
 export const getPageById = id => dispatch => {
 	dispatch(setPageLoading())
+	console.log(API_ENDPOINT)
 	axios
 		.get(`${API_ENDPOINT}/api/pages/${id}`)
 		.then(res =>
