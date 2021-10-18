@@ -61,22 +61,7 @@ export default function CheckoutForm(props) {
 			},
 		},
 	}
-	const sendOrder = () => {
-		const order = {
-			cart: cart,
-			shippingInfo: shippingInfo,
-			Total: TotalCart,
-		}
-		axios
-			.post(`${API_ENDPOINT}/api/orders/`, order)
-			.then(res => {
-				console.log(order, 'here')
-				return res.data
-			})
-			.catch(err => {
-				return console.log(err)
-			})
-	}
+
 	const handleChange = async event => {
 		// Listen for changes in the CardElement
 		// and display any errors as the customer types their card details
@@ -115,6 +100,21 @@ export default function CheckoutForm(props) {
 			return
 		}
 		setProcessing(true)
+		const order = await {
+			cart: cart,
+			shippingInfo: shippingInfo,
+			Total: TotalCart,
+		}
+
+		const forder = await axios
+			.post(`${API_ENDPOINT}/api/orders/`, order)
+			.then(res => {
+				console.log(order, 'here')
+				return res.data
+			})
+			.catch(err => {
+				return console.log(err)
+			})
 
 		const { clientSecret } = await fetch(`${API_ENDPOINT}/api/payment`, {
 			method: 'POST',
@@ -142,17 +142,17 @@ export default function CheckoutForm(props) {
 			},
 		})
 
-		if (payload.error) {
+		if (payload.error && !forder) {
 			setError(`Payment failed ${payload.error.message}`)
 			setProcessing(false)
 			console.log(payload.error.message, 'ERR')
-		} else {
+		} else if (forder) {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-			sendOrder()
+
 			// dispatch(resetCart())
-			console.log(payload, 'wanna add?')
+			console.log(payload, forder, 'wanna add?')
 		}
 	}
 	return (
