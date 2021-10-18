@@ -150,10 +150,10 @@ export default function CheckoutForm(props) {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-			const ord = await sendOrder()
-			console.log('ord: ', ord)
+			// const ord = await sendOrder()
+			// console.log('ord: ', ord)
 
-			dispatch(resetCart())
+			// dispatch(resetCart())
 			console.log(payload, 'wanna add?')
 		}
 	}
