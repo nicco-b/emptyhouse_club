@@ -141,8 +141,9 @@ export default function CheckoutForm(props) {
 				},
 			},
 		})
+		const order = await sendOrder()
 
-		if (payload.error) {
+		if (payload.error || order) {
 			setError(`Payment failed ${payload.error.message}`)
 			setProcessing(false)
 			console.log(payload.error.message, 'ERR')
@@ -150,7 +151,6 @@ export default function CheckoutForm(props) {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-			sendOrder()
 
 			// dispatch(resetCart())
 			console.log(payload, 'wanna add?')
