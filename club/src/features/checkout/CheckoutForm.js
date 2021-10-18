@@ -73,7 +73,7 @@ export default function CheckoutForm(props) {
 				return res.data
 			})
 			.catch(err => {
-				return err
+				return console.log(err)
 			})
 	}
 	const handleChange = async event => {
