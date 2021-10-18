@@ -17,6 +17,7 @@ export default function CheckoutForm(props) {
 	const stripe = useStripe()
 	const elements = useElements()
 	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
+	console.log('API_ENDPOINT: ', API_ENDPOINT)
 	const convertToUsd = n => {
 		const num = n
 		const dollars = num / 100
@@ -66,9 +67,14 @@ export default function CheckoutForm(props) {
 			shippingInfo: shippingInfo,
 			Total: TotalCart,
 		}
-		axios.post(`${API_ENDPOINT}/api/orders`, order).then(res => {
-			return res.data
-		})
+		axios
+			.post(`${API_ENDPOINT}/api/orders`, order)
+			.then(res => {
+				return res.data
+			})
+			.catch(err => {
+				return err
+			})
 	}
 	const handleChange = async event => {
 		// Listen for changes in the CardElement
@@ -143,7 +149,7 @@ export default function CheckoutForm(props) {
 			setProcessing(false)
 			setSucceeded(true)
 			await sendOrder()
-			await dispatch(resetCart())
+			dispatch(resetCart())
 			console.log(payload, 'wanna add?')
 		}
 	}
