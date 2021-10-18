@@ -102,7 +102,6 @@ const Plants = [
 		type: 'tree',
 	},
 ]
-
 const Characters = [
 	{
 		left: '43%',
