@@ -20,7 +20,6 @@ export const getAllProducts = id => dispatch => {
 		})
 	)
 }
-
 /// export const updateHome = file => dispatch => {
 // 	console.log('item: ', file)
 // 	// console.log(formData)
