@@ -68,7 +68,7 @@ export default function CheckoutForm(props) {
 			Total: TotalCart,
 		}
 		axios
-			.post(`${API_ENDPOINT}/api/orders`, order)
+			.post(`${API_ENDPOINT}/api/orders/`, order)
 			.then(res => {
 				console.log(order, 'here')
 				return res.data
@@ -141,9 +141,8 @@ export default function CheckoutForm(props) {
 				},
 			},
 		})
-		const order = await sendOrder()
 
-		if (payload.error || order) {
+		if (payload.error) {
 			setError(`Payment failed ${payload.error.message}`)
 			setProcessing(false)
 			console.log(payload.error.message, 'ERR')
@@ -151,7 +150,7 @@ export default function CheckoutForm(props) {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
-
+			sendOrder()
 			// dispatch(resetCart())
 			console.log(payload, 'wanna add?')
 		}
