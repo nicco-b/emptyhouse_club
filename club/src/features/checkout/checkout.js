@@ -113,7 +113,7 @@ export const Checkout = () => {
 			//need more redux actions for this cart stuff
 			console.log(registrations, 'rrrr')
 
-			setProd(registrations.flat())
+			setProd(registrations.reduce((acc, curr) => acc.concat(curr), []))
 		}
 
 		getRegistrations()
