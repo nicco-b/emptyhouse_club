@@ -9,6 +9,7 @@ export const NavLeftBox = styled.div`
 export const NavRightBox = styled.div`
 	display: grid;
 	grid-column-start: 2;
+
 	grid-column-end: 2;
 	font-size: 0.6em;
 	justify-self: end;
