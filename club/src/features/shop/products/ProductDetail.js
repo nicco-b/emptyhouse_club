@@ -65,6 +65,19 @@ export const ProductDetail = () => {
 		const usd = dollars.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 		return usd
 	}
+	const [addButtonState, setAddButtonState] = useState('default')
+	useEffect(() => {
+		let timer = setTimeout(() => {
+			setAddButtonState('default')
+		}, 500)
+		return () => {
+			clearTimeout(timer)
+		}
+	})
+	const handleCartAdd = () => {
+		dispatch(addToCart(product))
+		setAddButtonState('success')
+	}
 	return (
 		<BasePage>
 			<BasePGrid>
@@ -153,7 +166,9 @@ export const ProductDetail = () => {
 
 									<PDetailBottomBox>
 										{' '}
-										<Button onClick={() => dispatch(addToCart(product))}>add to cart</Button>
+										<Button onClick={handleCartAdd}>
+											{addButtonState === 'default' ? 'add to cart' : 'added!'}
+										</Button>
 									</PDetailBottomBox>
 								</ProductDetailRight>
 							</ProductDetailGrid>
