@@ -52,6 +52,7 @@ server.use(
 	}),
 	orders
 )
+
 server.use(
 	'/api/artists',
 	cors({
