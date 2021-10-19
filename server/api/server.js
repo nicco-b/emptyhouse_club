@@ -4,11 +4,15 @@ const server = express()
 const db = require('../db')
 const favicon = require('serve-favicon')
 const path = require('path')
-
+app.use(function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*')
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+	next()
+})
 server.use(express.static(path.join(__dirname, 'assets')))
 server.use(favicon(path.join(__dirname, 'assets', 'assets.emptyhouseclub.svg')))
 server.use(express.json())
-server.use(cors())
+
 server.all('*', function (req, res) {
 	res.header('Access-Control-Allow-Origin', '*')
 	res.header(
