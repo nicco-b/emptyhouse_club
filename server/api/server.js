@@ -9,7 +9,14 @@ server.use(express.static(path.join(__dirname, 'assets')))
 server.use(favicon(path.join(__dirname, 'assets', 'assets.emptyhouseclub.svg')))
 server.use(express.json())
 server.use(cors())
-
+server.all('*', function (req, res) {
+	res.header('Access-Control-Allow-Origin', '*')
+	res.header(
+		'Access-Control-Allow-Headers',
+		'Content-Type,Content-Length, Authorization, Accept,X-Requested-With'
+	)
+	res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
+})
 db.connectToServer(function (err) {
 	if (err) console.error(err)
 })
