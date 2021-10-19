@@ -3,8 +3,8 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { CardBox, Form } from './checkout.styled'
 import axios from 'axios'
 import Donut from '../../components/Donuts/Donut3'
-// import { useDispatch } from 'react-redux'
-// import { resetCart } from '../../actions/cartActions'
+import { useDispatch } from 'react-redux'
+import { resetCart } from '../../actions/cartActions'
 import { Button } from '../../app/app.styled'
 export default function CheckoutForm(props) {
 	const { succeeded, setSucceeded, shippingInfo, cart, TotalCart, shippingType } = props
@@ -14,6 +14,7 @@ export default function CheckoutForm(props) {
 	// const [clientSecret, setClientSecret] = useState('')
 	// const dispatch = useDispatch()
 	const stripe = useStripe()
+	const dispatch = useDispatch()
 	const elements = useElements()
 	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 	console.log('API_ENDPOINT: ', API_ENDPOINT)
@@ -150,7 +151,7 @@ export default function CheckoutForm(props) {
 			setProcessing(false)
 			setSucceeded(true)
 
-			// dispatch(resetCart())
+			dispatch(resetCart())
 			console.log(payload, forder, 'wanna add?')
 		}
 	}

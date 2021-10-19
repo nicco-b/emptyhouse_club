@@ -109,7 +109,7 @@ export const ProductDetailGrid = styled.div`
 	@media (max-width: 525px) {
 		grid-template-columns: 1fr;
 		gap: 1em;
-		grid-template-rows: 1fr 2fr;
+		/* grid-template-rows: 1fr 2fr; */
 	}
 `
 
