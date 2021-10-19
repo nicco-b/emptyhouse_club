@@ -37,8 +37,8 @@ export const Ground = styled.div`
 		height: 10em;
 	}
 	@media (min-height: 500px) {
-		min-width: 20em;
-		height: 13em;
+		min-width: 30em;
+		height: 20em;
 	}
 	@media (min-height: 600px) {
 		min-width: 40em;
@@ -49,34 +49,51 @@ export const Ground = styled.div`
 		height: 20em;
 	}
 	@media (max-width: 600px) {
-		min-width: 20em;
-		height: 12.5em;
+		min-width: 28em;
+		height: 16.5em;
 	}
+
 	@media (max-width: 500px) {
 		min-width: 22em;
 		height: 15em;
 	}
+	@media (max-width: 470px) {
+		min-width: 20em;
+		height: 12em;
+	}
+	@media (max-width: 375px) {
+		min-width: 18em;
+		height: 12em;
+	}
+	@media (max-width: 275px) {
+		min-width: 12em;
+		height: 8em;
+	}
 	@media (min-width: 800px) and (min-height: 800px) {
-		min-width: 36em;
-		height: 22em;
+		min-width: 48em;
+		height: 28em;
 	}
 	@media (min-width: 1000px) and (min-height: 800px) {
-		min-width: 40em;
-		height: 24em;
+		min-width: 60em;
+		height: 34em;
 	}
 	@media (min-width: 1100px) and (min-height: 1100px) {
-		min-width: 50em;
-		height: 30em;
+		min-width: 70em;
+		height: 42em;
 	}
 	@media (min-width: 1200px) and (max-height: 1100px) {
-		min-width: 40em;
-		height: 24em;
+		min-width: 67em;
+		height: 40em;
 	}
 	@media (min-width: 1300px) and (min-height: 1100px) {
-		min-width: 50em;
-		height: 32em;
+		min-width: 70em;
+		height: 42em;
 	}
 	@media (min-width: 1500px) and (min-height: 1000px) {
+		min-width: 80em;
+		height: 49em;
+	}
+	@media (min-width: 1000px) and (min-height: 800px) {
 		min-width: 50em;
 		height: 32em;
 	}
