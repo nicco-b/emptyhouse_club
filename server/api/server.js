@@ -13,7 +13,6 @@ server.use(cors())
 db.connectToServer(function (err) {
 	if (err) console.error(err)
 })
-
 //ROUTES
 const pagesRouter = require('./pages/pages-router')
 const shopRouter = require('./shop/shop-router')
