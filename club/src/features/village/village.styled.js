@@ -50,7 +50,7 @@ export const Ground = styled.div`
 	}
 	@media (min-height: 600px) {
 		min-width: 40em;
-		height: 24.2em;
+		height: 27.2em;
 	}
 	@media (min-height: 800px) {
 		min-width: 38em;
@@ -66,7 +66,7 @@ export const Ground = styled.div`
 	}
 	@media (min-width: 800px) and (min-height: 800px) {
 		min-width: 36em;
-		height: 22em;
+		height: 26em;
 	}
 	@media (min-width: 1000px) and (min-height: 800px) {
 		min-width: 50em;
@@ -78,7 +78,7 @@ export const Ground = styled.div`
 	}
 	@media (min-width: 1200px) and (max-height: 1100px) {
 		min-width: 40em;
-		height: 24em;
+		height: 28em;
 	}
 	@media (min-width: 1300px) and (min-height: 1100px) {
 		min-width: 60em;
@@ -87,6 +87,10 @@ export const Ground = styled.div`
 	@media (min-width: 1500px) and (min-height: 1000px) {
 		min-width: 60em;
 		height: 42em;
+	}
+	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+		min-width: 20em;
+		height: 15em;
 	}
 	/* height: 40%; */
 	/* grid-template-rows: 1fr;

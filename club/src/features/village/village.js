@@ -50,8 +50,8 @@ const Houses = [
 ]
 const HouseBubbles = [
 	{
-		left: '0%',
-		top: '13%',
+		left: '-2%',
+		top: '5%',
 		zIndex: '2',
 		width: '20%',
 		imageNight: '/homes/about_bubble.png',
@@ -70,8 +70,8 @@ const HouseBubbles = [
 		pageId: 'tshirts',
 	},
 	{
-		left: '54%',
-		top: '-24%',
+		left: '59%',
+		top: '-20%',
 		zIndex: '1',
 		width: '22%',
 		imageNight: '/homes/faq_bubble.png',
@@ -187,15 +187,15 @@ const Plants = [
 const Characters = [
 	{
 		left: '33%',
-		top: '40%',
+		top: '44%',
 		zIndex: '2',
 		width: '7%',
 		image: 'ghost.png',
 		name: 'ghost',
 	},
 	{
-		left: '70%',
-		top: '52%',
+		left: '40%',
+		top: '82%',
 		zIndex: '2',
 		width: '11%',
 		image: 'shortredboots.png',
@@ -229,7 +229,7 @@ const Characters = [
 		left: '50%',
 		top: '37%',
 		zIndex: '2',
-		width: '8%',
+		width: '7%',
 		image: 'proudpersonamask.png',
 		name: 'proudpersonamask',
 	},
@@ -259,9 +259,9 @@ const Characters = [
 	},
 	{
 		left: '60%',
-		top: '93%',
+		top: '82%',
 		zIndex: '0',
-		width: '20%',
+		width: '25%',
 		image: 'stripecatmananddog.png',
 		name: 'stripecatmananddog',
 	},

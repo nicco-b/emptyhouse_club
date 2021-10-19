@@ -80,4 +80,6 @@ export const RightNav = styled.div`
 	/* grid-template-columns: 1fr 0.2fr; */
 	width: fit-content;
 	justify-self: end;
+	text-transform: uppercase;
+	font-weight: 300;
 `
