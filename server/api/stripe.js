@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const stripe = require('stripe')(
-	'sk_test_51ISdngLe6nBHbc2ZMb6KYpMSUlT4Srbeim1NAsstEspOwpUXxCX2pSTvGZLVb9RIaJvpj2u0MvbmSx0HyaWKw0xs00BgGP8CC2'
+	'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'
 )
 app.post(
 	'/create-payment-intent',
