@@ -20,13 +20,13 @@ const getCartProducts = async cart => {
 	try {
 		let db_connect = await db.getDb('emptyhouseclub')
 		const mapped = await getQuantity(cart.quantityById)
-		console.log(mapped, 'mapped')
+		// console.log(mapped, 'mapped')
 		const ids = mapped.map(id => ObjectId(id.id))
 		const arr = await db_connect
 			.collection('products')
 			.find({ _id: { $in: ids } })
 			.toArray()
-		console.log(arr, 'top') //isgood
+		// console.log(arr, 'top') //isgood
 		return arr
 	} catch (err) {
 		console.log(err)
@@ -44,9 +44,9 @@ const calculateOrderAmount = async (cart, shippingType) => {
 	// getCartProducts(cart, getarr)
 	try {
 		const s = await getCartProducts(cart)
-		console.log(s, 's') //is good
+		// console.log(s, 's') //is good
 		const a1 = await getQuantity(cart.quantityById)
-		console.log(a1, 'a1') //this is showing [
+		// console.log(a1, 'a1') //this is showing [
 		// 	{ id: '61653075b1464786c699e348', amount: 1 },
 		// 	{ id: '61615e2ab1464786c699e310', amount: 6 }
 		//   ]
@@ -54,14 +54,14 @@ const calculateOrderAmount = async (cart, shippingType) => {
 			...t1,
 			...s.find(t2 => JSON.stringify(t1.id) === JSON.stringify(t2._id)),
 		}))
-		console.log(a3, 'a3')
+		// console.log(a3, 'a3')
 
 		const amt = await a3.map(ea => ea.amount * ea.pricing.price)
-		console.log(amt, 'amt')
+		// console.log(amt, 'amt')
 		const sum = await amt.reduce((partial_sum, a) => partial_sum + a, 0)
-		console.log(shippingType)
+		// console.log(shippingType)
 		const newSum = +sum + +shippingType
-		console.log('newSum: ', newSum)
+		// console.log('newSum: ', newSum)
 		return newSum
 	} catch (err) {
 		return console.log(err)
@@ -86,7 +86,7 @@ const calculateOrderAmount = async (cart, shippingType) => {
 
 router.post('/', async (req, res) => {
 	const { cart, shippingInfo, shippingType, total } = req.body
-	console.log(cart, 'CART', shippingInfo, 'SHIPPING', shippingType)
+	// console.log(cart, 'CART', shippingInfo, 'SHIPPING', shippingType)
 	// Create a PaymentIntent with the order amount and currency
 	const paymentIntent = await stripe.paymentIntents.create({
 		amount: await calculateOrderAmount(cart, shippingType),

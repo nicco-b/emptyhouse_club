@@ -24,7 +24,7 @@ const ObjectId = require('mongodb').ObjectId
 
 router.get('/:category', async (req, res) => {
 	const id = await req.params.id
-	console.log(req.params)
+	// console.log(req.params)
 	const agg = await [
 		{
 			$lookup: {
@@ -69,7 +69,7 @@ router.get('/:category', async (req, res) => {
 				console.log(err)
 				res.status(404).json('not found')
 			} else {
-				console.log(result)
+				// console.log(result)
 				res.status(200).json(result)
 			}
 		})
@@ -114,7 +114,7 @@ router.get('/:category/:id', async (req, res) => {
 		if (!doc.parentPage.live) {
 			res.status(404).json('p not found')
 		} else if (doc) {
-			console.log(doc)
+			// console.log(doc)
 			res.status(200).json(doc)
 		}
 	}

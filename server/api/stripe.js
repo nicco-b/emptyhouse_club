@@ -7,7 +7,7 @@ app.post(
 
 	async (req, res) => {
 		const { items } = req.body
-		console.log('server', req.body)
+		// console.log('server', req.body)
 		const paymentIntent = await stripe.paymentIntents.create({
 			amount: calculateOrderAmount(items),
 			currency: 'usd',

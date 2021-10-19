@@ -101,7 +101,7 @@ export default function CheckoutForm(props) {
 		}
 		setProcessing(true)
 		const order = await {
-			cart: stateCart,
+			cart: cart,
 			shippingInfo: shippingInfo,
 			Total: TotalCart,
 		}

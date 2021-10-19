@@ -27,7 +27,7 @@ jobs:
       node-version: ${{ matrix.node-version }}
 
    - run: npm i  --prefix ./server
-   - run: pm2 restart serv
+   - run: pm2 restart index
 #    - run: cd ./apps/ &&  rsync -a backend/  ../../../../../public/backend
 
 #    - run: cd ../../../../public/backend && pwd && NODE_ENV=production pm2 reload server.js --update-env
