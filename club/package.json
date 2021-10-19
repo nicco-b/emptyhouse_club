@@ -31,7 +31,8 @@
 		"styled-components": "^5.3.1",
 		"three": "^0.133.1",
 		"use-cannon": "^0.5.3",
-		"web-vitals": "^1.1.2"
+		"web-vitals": "^1.1.2",
+		"yup": "^0.32.11"
 	},
 	"scripts": {
 		"start": "PORT=5555 react-scripts start",

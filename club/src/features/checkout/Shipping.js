@@ -3,6 +3,7 @@ import { Button } from '../../app/app.styled'
 import { TextInput } from '../../components/inputs/TextInput'
 import { CartSumSubHeader } from '../cart/cart.styled'
 import { Form, StateDrop } from './checkout.styled'
+
 const Shipping = ({ setShipping, values, handleChanges, clearForm, active }) => {
 	const [succeeded] = useState(false)
 	const [disabled] = useState(false)
@@ -43,6 +44,7 @@ const Shipping = ({ setShipping, values, handleChanges, clearForm, active }) => 
 				onChange={handleChanges}
 				placeholder='Email'
 				name='email'
+				required
 				active={active}
 			/>
 
@@ -52,6 +54,7 @@ const Shipping = ({ setShipping, values, handleChanges, clearForm, active }) => 
 				onChange={handleChanges}
 				placeholder='Address 1'
 				name='address1'
+				required
 				active={active}
 			/>
 			<TextInput
@@ -68,6 +71,7 @@ const Shipping = ({ setShipping, values, handleChanges, clearForm, active }) => 
 				onChange={handleChanges}
 				placeholder='City'
 				name='city'
+				required
 				active={active}
 			/>
 			{/* 

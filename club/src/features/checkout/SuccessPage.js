@@ -28,7 +28,7 @@ export const SuccessPage = () => {
 					<Centered>
 						<div style={{ fontWeight: 800, fontSize: '1.2em' }}>thank you for your purchase</div>
 						<div>check email for receipt and updates</div>
-						<SuccessThumb src='/shortredboots.png' alt='success' />
+						<SuccessThumb src='/redboots2.png' alt='success' />
 					</Centered>
 				</Full>
 			</BasePGrid>

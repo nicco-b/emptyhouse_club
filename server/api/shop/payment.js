@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../../db')
 const stripe = require('stripe')(
-	'sk_test_51Jle1MDR7p1FRg7AfcyjuOdYRquOF4jIsAvZ980VI58DDZpuDV492j7ednvWkU8uWlCJFO5RJ4VAz1V25vU6kOFs00wp1BkCxY'
+	'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'
 )
 //payment... a fun time with asynchronous javascript
 const ObjectId = require('mongodb').ObjectId

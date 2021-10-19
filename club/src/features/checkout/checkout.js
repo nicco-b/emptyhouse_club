@@ -27,25 +27,47 @@ import { CartSummaryContainer } from './CartSummary/CartSummaryContainer'
 import { useHistory } from 'react-router-dom'
 import { Arrow } from '../../components/svg/arrow'
 const ShippingInfo = {
-	firstName: '',
-	lastName: '',
-	email: '',
-	address1: '',
-	address2: '',
-	city: '',
-	state: '',
-	postalCode: '',
+	info: {
+		firstName: '',
+		lastName: '',
+		email: '',
+		address1: '',
+		address2: '',
+		city: '',
+		state: '',
+		postalCode: '',
+	},
+	errors: {
+		firstName: '',
+		lastName: '',
+		email: '',
+		address1: '',
+		address2: '',
+		city: '',
+		state: '',
+		postalCode: '',
+	},
 }
 const ShippingTypeInits = {
 	shippingType: '50',
 }
-
+// const initialFormErrors = {
+// 	firstName: '',
+// 	lastName: '',
+// 	email: '',
+// 	address1: '',
+// 	address2: '',
+// 	city: '',
+// 	state: '',
+// 	postalCode: '',
+// }
 export const Checkout = () => {
 	const [ShippingTypeInit, setShippingTypeInit] = useState(ShippingTypeInits)
 	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 	const cart = useSelector(state => state.cart)
 	const [stateCart, setStateCart] = useState([])
+
 	const [cartToat, setCartToat] = useState()
 	const [succeeded, setSucceeded] = useState(false)
 	const [prod, setProd] = useState([])
@@ -58,7 +80,12 @@ export const Checkout = () => {
 	const e = p.reduce(function (acc, val) {
 		return acc + val
 	}, 0)
-
+	// const validate = (name, value) => {
+	// 	reach(schema, name)
+	// 		.validate(value)
+	// 		.then(() => setFormErrors({ ...formErrors, [name]: '' }))
+	// 		.catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
+	// }
 	useEffect(() => {
 		// Create PaymentIntent as soon as the page loads
 
@@ -116,14 +143,15 @@ export const Checkout = () => {
 		}
 		getCarrt()
 	}, [cart.addedIds, prod])
+
 	const [values, handleChanges, clearForm, active] = useForm(ShippingInfo)
+	console.log('formErrors: ')
 
 	const [pay, setPay] = useState(false)
 	const [shipping, setShipping] = useState(false)
 
 	const inputChange = value => {
 		// 🔥 STEP 10- RUN VALIDATION WITH YUP
-
 		setShippingTypeInit({
 			...ShippingTypeInit,
 			shippingType: value, // NOT AN ARRAY
@@ -215,6 +243,8 @@ export const Checkout = () => {
 											values={values}
 											handleChanges={handleChanges}
 											clearForm={clearForm}
+											// disabled={disabled}
+											// errors={formErrors}
 										/>
 									)}
 

@@ -132,13 +132,13 @@ export default function CheckoutForm(props) {
 		})
 
 		const payload = await stripe.confirmCardPayment(clientSecret, {
-			receipt_email: shippingInfo.email,
+			// receipt_email: shippingInfo.email,
 
 			payment_method: {
 				card: elements.getElement(CardElement),
-				billing_details: {
-					email: shippingInfo.email,
-				},
+				// billing_details: {
+				// 	email: shippingInfo.email,
+				// },
 			},
 		})
 
