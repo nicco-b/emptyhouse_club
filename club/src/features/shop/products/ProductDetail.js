@@ -125,9 +125,7 @@ export const ProductDetail = () => {
 											}}>
 											artist:
 											{product.artists.map(artist => (
-												<div style={{ cursor: 'pointer', fontWeight: 800, textDecoration: 'underline' }}>
-													{artist}
-												</div>
+												<div style={{ cursor: 'pointer', textDecoration: 'underline' }}>{artist}</div>
 											))}
 										</div>
 									</PDetailDescription>

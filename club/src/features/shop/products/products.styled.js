@@ -83,7 +83,7 @@ export const DetailsBoxTitle = styled.div`
 	padding-right: 0.6em;
 	width: fit-content;
 	grid-auto-flow: column;
-	font-weight: 800;
+	/* font-weight: 800; */
 	text-decoration: underline;
 	cursor: pointer;
 	padding-bottom: 0.5em;
@@ -135,19 +135,19 @@ export const PDetail = styled.div`
 	/* padding: 1em; */
 `
 export const A = styled(Link)`
-	font-weight: 600;
+	font-weight: 500;
 	text-decoration: underline;
 	&:hover {
 		opacity: 50%;
 	}
 `
 export const PDetailTitle = styled.h1`
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.3em;
 	text-transform: uppercase;
 `
 export const PDetailPrice = styled.h3`
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.1em;
 	text-transform: uppercase;
 `
@@ -164,7 +164,7 @@ export const PDetailBottomBox = styled.div`
 	display: grid;
 `
 export const PThumbTitle = styled.div`
-	font-weight: 600;
+	font-weight: 500;
 `
 
 export const PThumbnail = styled.img.attrs(props => ({

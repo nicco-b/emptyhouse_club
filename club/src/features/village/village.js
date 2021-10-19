@@ -30,8 +30,8 @@ const Houses = [
 		pageId: 'tshirts',
 	},
 	{
-		left: '63%',
-		top: '0%',
+		left: '67%',
+		top: '5%',
 		zIndex: '1',
 		width: '37%',
 		imageNight: '/homes/faq_dark.png',
