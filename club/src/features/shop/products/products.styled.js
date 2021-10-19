@@ -101,6 +101,7 @@ export const ProductDetailGrid = styled.div`
 	justify-self: center;
 
 	gap: 2em;
+
 	@media (max-width: 825px) {
 		grid-template-columns: 1fr 1fr;
 		gap: 1em;

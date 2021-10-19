@@ -28,8 +28,7 @@ jobs:
 
    - run: npm i  --prefix ./server
    - run: pm2 restart index
-#    - run: cd ./apps/ &&  rsync -a backend/  ../../../../../public/backend
-
+   - run: cd ./apps/ &&  rsync -a server  ../../../../../public/server
 #    - run: cd ../../../../public/backend && pwd && NODE_ENV=production pm2 reload server.js --update-env
 #      env:
 #       DB_URI: ${{ secrets.DB_URI }}
