@@ -70,7 +70,12 @@ export const TopNav = ({ setTheme, theme, day, night }) => {
 						<NavCart>
 							<NavLink activeClassName='current' to='/cart'>
 								{/* <CartIcon src={'/cart2.png'} alt='cart' /> */}
-								{pathname !== '/checkout' && pathname !== '/cart' && e > 0 && `cart ${e}`}
+								{pathname !== '/checkout' && pathname !== '/cart' && e > 0 && (
+									<div style={{ display: 'grid', gridAutoFlow: 'column', alignItems: 'center' }}>
+										<CartIcon src={'/cartbag.png'} />{' '}
+										<p style={{ paddingTop: '2px', fontSize: '1.2em' }}>{e}</p>
+									</div>
+								)}
 							</NavLink>
 						</NavCart>
 					</TempTwo>

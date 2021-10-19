@@ -42,7 +42,6 @@ export const ToggleText = styled.div`
 `
 export const NavCart = styled.div`
 	grid-column: 2;
-	white-space: nowrap;
 `
 export const MainTitle = styled.div`
 	font-size: 0.6em;
@@ -82,4 +81,5 @@ export const RightNav = styled.div`
 	justify-self: end;
 	text-transform: uppercase;
 	font-weight: 300;
+	font-size: smaller;
 `

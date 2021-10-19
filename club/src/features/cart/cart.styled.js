@@ -226,7 +226,8 @@ export const CartIcon = styled.img.attrs(props => ({
 	src: props.src,
 	alt: props.alt,
 }))`
-	width: 40px;
+	width: 30px;
+	align-items: center;
 	height: auto;
 	&:hover {
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.08));
