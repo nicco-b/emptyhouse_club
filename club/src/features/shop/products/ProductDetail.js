@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { prominent } from 'color.js'
-
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect, useParams } from 'react-router'
@@ -24,6 +23,8 @@ import {
 	ProductDetailRight,
 	ProductNav,
 	PThumbnail,
+	DetailsBox,
+	DetailsBoxTitle,
 } from './products.styled'
 import { addToCart } from '../../../actions/cartActions'
 import {
@@ -35,6 +36,9 @@ import {
 } from '../../../pages/page.styled'
 import { Arrow } from '../../../components/svg/arrow'
 import { IncrementButtonBox } from '../../cart/cart.styled'
+import { Minus } from '../../../components/svg/minus'
+
+import { Plus } from '../../../components/svg/plus'
 
 export const ProductDetail = () => {
 	const { category, id, pageId } = useParams()
@@ -50,6 +54,7 @@ export const ProductDetail = () => {
 	const product = useSelector(state => state.shopReducer.product)
 	const shop = useSelector(state => state.shopReducer)
 	const [error, setError] = useState('')
+	const [deets, setDeets] = useState(true)
 
 	useEffect(() => {
 		setError(shop.error.message)
@@ -102,7 +107,6 @@ export const ProductDetail = () => {
 											alignItems: 'center',
 										}}>
 										<PDetailPrice>{convertToUsd(product.pricing.price)}</PDetailPrice>
-										<Button onClick={() => dispatch(addToCart(product))}>add to cart</Button>
 									</div>
 									<PDetailDescription>
 										{product.shipping.width}" x {product.shipping.height}"
@@ -110,32 +114,48 @@ export const ProductDetail = () => {
 									<PDetailDescription>
 										<b>{product.description}</b>
 									</PDetailDescription>
-									<ul>
-										<PPageDescription>
-											{product.parentPage.pageDescription.map(ea => (
-												<li>{ea}</li>
+									<PDetailDescription>
+										<div
+											style={{
+												display: 'grid',
+												whiteSpace: 'nowrap',
+												gridAutoFlow: 'column',
+												width: 'fit-content',
+												gap: '1em',
+											}}>
+											artist:
+											{product.artists.map(artist => (
+												<div style={{ cursor: 'pointer', fontWeight: 800, textDecoration: 'underline' }}>
+													{artist}
+												</div>
 											))}
-										</PPageDescription>
-									</ul>
+										</div>
+									</PDetailDescription>
+									<DetailsBox>
+										{/* cursor: 'pointer',
+												display: 'grid',
+												fontWeight: 800,
+												// textDecoration: 'underline',
+												// gridTemplateColumns: '1fr 1fr',
+												width: 'fit-content',
+												paddingBottom: '0.5em', */}
+										<DetailsBoxTitle onClick={() => setDeets(!deets)}>
+											Details <div>{deets ? <Minus /> : <Plus />}</div>
+										</DetailsBoxTitle>{' '}
+										{deets && (
+											<ul>
+												<PPageDescription>
+													{product.parentPage.pageDescription.map(ea => (
+														<li style={{ cursor: 'default' }}>{ea}</li>
+													))}
+												</PPageDescription>
+											</ul>
+										)}
+									</DetailsBox>
 
 									<PDetailBottomBox>
-										<PDetailDescription>
-											<div
-												style={{
-													display: 'grid',
-													whiteSpace: 'nowrap',
-													gridAutoFlow: 'column',
-													width: 'fit-content',
-													gap: '1em',
-												}}>
-												artist:
-												{product.artists.map(artist => (
-													<div style={{ cursor: 'pointer', fontWeight: 800, textDecoration: 'underline' }}>
-														{artist}
-													</div>
-												))}
-											</div>
-										</PDetailDescription>
+										{' '}
+										<Button onClick={() => dispatch(addToCart(product))}>add to cart</Button>
 									</PDetailBottomBox>
 								</ProductDetailRight>
 							</ProductDetailGrid>

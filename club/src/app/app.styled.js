@@ -47,8 +47,8 @@ export const NavBox = styled.nav`
 	/* transition: background-color s; */
 	/* justify-content: center; */
 	/* padding: 0.4em 0.5em 0.3em 0.5em; */
-	grid-template-columns: auto 1fr 1fr;
-	gap: 2em;
+	grid-template-columns: 1fr 1fr;
+	/* gap: 2em; */
 
 	align-items: center;
 	z-index: 1000;

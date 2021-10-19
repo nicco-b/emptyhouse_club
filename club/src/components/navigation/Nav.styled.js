@@ -65,9 +65,11 @@ export const MainTitle = styled.div`
 export const NavTemp = styled.div`
 	display: grid;
 	font-size: 0.6em;
-	grid-template-columns: repeat(2, 1fr);
+	/* grid-template-columns: repeat(3, 0.2fr); */
+	grid-auto-flow: column;
 	width: fit-content;
 	align-content: center;
+	justify-self: center;
 	height: 100%;
 	gap: 1em;
 	/* justify-self: center; */

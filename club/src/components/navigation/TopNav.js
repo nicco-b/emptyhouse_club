@@ -15,10 +15,10 @@ import {
 } from './Nav.styled'
 
 const TopLinks = [
-	// {
-	// 	slug: '/',
-	// 	title: 'home',
-	// },
+	{
+		slug: '/shop/patches',
+		title: 'shop',
+	},
 	{
 		slug: '/pages/about',
 		title: 'about',

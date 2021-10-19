@@ -1,26 +1,6 @@
 import styled from 'styled-components'
+import { FQBlock, FQMiddle, FQGrid, FHeader } from './page.styled'
 
-const FHeader = styled.div`
-	display: grid;
-	font-weight: 900;
-	font-size: 1rem;
-`
-const FQGrid = styled.div`
-	display: grid;
-	gap: 1em;
-	max-width: 400px;
-`
-const FQBlock = styled.div`
-	display: grid;
-	> div {
-		font-size: 0.9rem;
-	}
-`
-const FQMiddle = styled.div`
-	display: grid;
-	justify-content: center;
-	padding-top: 2em;
-`
 export const FaqPage = () => {
 	return (
 		<FQMiddle>

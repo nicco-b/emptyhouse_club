@@ -36,7 +36,7 @@ const Houses = [
 		width: '37%',
 		imageNight: '/homes/faq_dark.png',
 		imageDay: '/homes/faq_light.png',
-		slug: '/shop/prison',
+		slug: '/pages/faq',
 	},
 	{
 		left: '72%',
@@ -76,7 +76,7 @@ const HouseBubbles = [
 		width: '22%',
 		imageNight: '/homes/faq_bubble.png',
 		imageDay: '/homes/faq_bubble.png',
-		slug: '/shop/prison',
+		slug: '/pages/faq',
 	},
 	{
 		left: '83%',

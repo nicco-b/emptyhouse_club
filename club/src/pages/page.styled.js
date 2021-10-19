@@ -1,5 +1,50 @@
 import styled from 'styled-components'
 
+export const SocialBox = styled.div`
+	display: grid;
+	padding-top: 1em;
+	width: fit-content;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr 1fr;
+`
+export const SocialGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	> img {
+		width: 100%;
+		height: auto;
+	}
+`
+
+export const ATitle = styled.h1`
+	font-weight: 700;
+	font-size: 1.4em;
+	padding-bottom: 0.5em;
+	margin-left: -1px;
+`
+export const FHeader = styled.div`
+	display: grid;
+	font-weight: 900;
+	font-size: 1rem;
+`
+export const FQGrid = styled.div`
+	display: grid;
+	gap: ${props => (props.gap ? props.gap : '1em')};
+	max-width: 400px;
+`
+export const FQBlock = styled.div`
+	display: grid;
+	gap: ${props => (props.gap ? props.gap : null)};
+	> div {
+		font-size: 0.9rem;
+	}
+`
+export const FQMiddle = styled.div`
+	display: grid;
+	justify-content: center;
+	padding-top: 2em;
+`
 export const PageTitle = styled.h1`
 	font-size: 1.2em;
 	font-weight: 500;

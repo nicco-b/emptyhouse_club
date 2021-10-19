@@ -68,12 +68,44 @@ export const ProductBoxImg = styled.div`
 		grid-area: 1 / 1 / 2 / 2;
 	} */
 `
+export const DetailsBox = styled.div`
+	display: grid;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+`
+
+export const DetailsBoxTitle = styled.div`
+	display: grid;
+	padding-right: 0.6em;
+	width: fit-content;
+	grid-auto-flow: column;
+	font-weight: 800;
+	text-decoration: underline;
+	cursor: pointer;
+	padding-bottom: 0.5em;
+	> div {
+		padding-left: 0.5em;
+	}
+`
+
 export const ProductDetailGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	height: 100%;
 	padding: 2em;
-	gap: 5em;
+	max-width: 1200px;
+	justify-self: center;
+
+	gap: 2em;
+	@media (max-width: 825px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 1em;
+		/* grid-template-rows: 1fr 2fr; */
+	}
 	@media (max-width: 525px) {
 		grid-template-columns: 1fr;
 		gap: 1em;
@@ -89,9 +121,11 @@ export const ProductDetailLeft = styled.div`
 export const ProductDetailRight = styled.div`
 	display: grid;
 	height: fit-content;
-	grid-template-rows: 1fr 1fr 1fr 1fr 6fr 1fr;
+	/* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
 	/* padding: 1em; */
 	gap: 1em;
+	max-width: 400px;
+	justify-self: end;
 `
 
 export const PDetail = styled.div`
