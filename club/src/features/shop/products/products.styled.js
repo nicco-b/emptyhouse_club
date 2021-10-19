@@ -46,7 +46,6 @@ export const ProductBoxDetail = styled.div`
 	min-width: 100%;
 	/* grid-template-rows: 1fr 1fr; */
 `
-
 export const ProductBoxImg = styled.div`
 	display: grid;
 	align-content: center;
