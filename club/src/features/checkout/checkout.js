@@ -233,7 +233,6 @@ export const Checkout = () => {
 											setPay={setPay}
 										/>
 									)}
-
 									<PageTitle>{pay ? 'PAYMENT' : !shipping && 'SHIPPING'}</PageTitle>
 
 									{!pay && !shipping && (
