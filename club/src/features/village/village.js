@@ -11,7 +11,7 @@ import { HomeBubble } from './objects/HouseBubble'
 const Houses = [
 	{
 		left: '3%',
-		top: '30%',
+		top: '23%',
 		zIndex: '2',
 		width: '30%',
 		imageNight: '/homes/about_dark.png',
@@ -21,7 +21,7 @@ const Houses = [
 	},
 	{
 		left: '17%',
-		top: '-5%',
+		top: '-10%',
 		zIndex: '1',
 		width: '40%',
 		imageNight: '/homes/construction_bubble.png',
@@ -91,8 +91,8 @@ const HouseBubbles = [
 const Plants = [
 	{
 		id: 1,
-		left: '35%',
-		top: '-13%',
+		left: '45%',
+		top: '-7%',
 		zIndex: '0',
 		width: '20%',
 		image: 'roundtree.png',
@@ -102,7 +102,7 @@ const Plants = [
 	{
 		id: 2,
 
-		left: '-3%',
+		left: '-7%',
 		top: '10%',
 		zIndex: '1',
 		width: '20%',
@@ -113,10 +113,10 @@ const Plants = [
 	{
 		id: 3,
 
-		left: '0%',
-		top: '70%',
+		left: '-5%',
+		top: '60%',
 		zIndex: '3',
-		width: '20%',
+		width: '25%',
 		image: 'birchtree2.png',
 		name: 'birchtree2',
 		type: 'tree',
@@ -124,30 +124,21 @@ const Plants = [
 	{
 		id: 4,
 
-		left: '65%',
-		top: '5%',
+		left: '55%',
+		top: '23%',
 		zIndex: '2',
 		width: '20%',
 		image: 'birchtree3.png',
 		name: 'birchtree3',
 		type: 'tree',
 	},
+
 	{
 		id: 5,
 		left: '83%',
-		top: '84%',
+		top: '88%',
 		zIndex: '4',
-		width: '7%',
-		image: 'figtree.png',
-		name: 'figtree',
-		type: 'tree',
-	},
-	{
-		id: 5,
-		left: '83%',
-		top: '84%',
-		zIndex: '4',
-		width: '7%',
+		width: '10%',
 		image: 'figtree.png',
 		name: 'figtree',
 		type: 'tree',
@@ -195,18 +186,18 @@ const Plants = [
 ]
 const Characters = [
 	{
-		left: '43%',
-		top: '30%',
+		left: '33%',
+		top: '40%',
 		zIndex: '2',
-		width: '5%',
+		width: '7%',
 		image: 'ghost.png',
 		name: 'ghost',
 	},
 	{
-		left: '67%',
-		top: '72%',
+		left: '70%',
+		top: '52%',
 		zIndex: '2',
-		width: '9%',
+		width: '11%',
 		image: 'shortredboots.png',
 		name: 'shortredboots',
 	},
@@ -243,18 +234,18 @@ const Characters = [
 		name: 'proudpersonamask',
 	},
 	{
-		left: '30%',
-		top: '70%',
+		left: '57%',
+		top: '60%',
 		zIndex: '2',
-		width: '8%',
+		width: '9%',
 		image: 'saddoghuman.png',
 		name: 'saddoghuman',
 	},
 	{
 		left: '6%',
-		top: '100%',
+		top: '90%',
 		zIndex: '2',
-		width: '6%',
+		width: '8%',
 		image: 'spiky.png',
 		name: 'spiky',
 	},

@@ -12,6 +12,7 @@ import {
 	TempTwo,
 	ToggleText,
 	NavTemp,
+	RightNav,
 } from './Nav.styled'
 
 const TopLinks = [
@@ -50,29 +51,31 @@ export const TopNav = ({ setTheme, theme, day, night }) => {
 					</NavLink>
 				</MainTitle>
 			</NavLeftBox>
-			<NavTemp>
-				{/* <ToggleText onClick={() => setTheme(day)}>day</ToggleText>
+			<RightNav>
+				<NavTemp>
+					{/* <ToggleText onClick={() => setTheme(day)}>day</ToggleText>
 				<ToggleText onClick={() => setTheme(night)}>night</ToggleText> */}
-				{pathname !== '/checkout' &&
-					pathname !== '/cart' &&
-					TopLinks.map(link => {
-						return (
-							<NavLink activeClassName='current' key={link.slug} to={link.slug}>
-								{link.title}
+					{pathname !== '/checkout' &&
+						pathname !== '/cart' &&
+						TopLinks.map(link => {
+							return (
+								<NavLink activeClassName='current' key={link.slug} to={link.slug}>
+									{link.title}
+								</NavLink>
+							)
+						})}
+				</NavTemp>
+				<NavRightBox>
+					<TempTwo>
+						<NavCart>
+							<NavLink activeClassName='current' to='/cart'>
+								{/* <CartIcon src={'/cart2.png'} alt='cart' /> */}
+								{pathname !== '/checkout' && pathname !== '/cart' && e > 0 && `cart ${e}`}
 							</NavLink>
-						)
-					})}
-			</NavTemp>
-			<NavRightBox>
-				<TempTwo>
-					<NavCart>
-						<NavLink activeClassName='current' to='/cart'>
-							{/* <CartIcon src={'/cart2.png'} alt='cart' /> */}
-							{pathname !== '/checkout' && pathname !== '/cart' && e > 0 && `cart ${e}`}
-						</NavLink>
-					</NavCart>
-				</TempTwo>
-			</NavRightBox>
+						</NavCart>
+					</TempTwo>
+				</NavRightBox>
+			</RightNav>
 		</NavBox>
 	)
 }

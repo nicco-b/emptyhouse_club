@@ -28,6 +28,14 @@ export const Ground = styled.div`
 		min-width: 40em;
 		height: 25em;
 	} */
+	@media (min-width: 800px) {
+		min-width: 36em;
+		height: 22em;
+	}
+	@media (min-width: 100px) {
+		min-width: 40em;
+		height: 25em;
+	}
 	@media (min-height: 300px) {
 		min-width: 12em;
 		height: 8em;
@@ -37,66 +45,71 @@ export const Ground = styled.div`
 		height: 10em;
 	}
 	@media (min-height: 500px) {
-		min-width: 30em;
-		height: 20em;
+		min-width: 20em;
+		height: 13em;
 	}
 	@media (min-height: 600px) {
 		min-width: 40em;
 		height: 24.2em;
 	}
 	@media (min-height: 800px) {
-		min-width: 30em;
-		height: 20em;
-	}
-	@media (max-width: 600px) {
-		min-width: 28em;
-		height: 16.5em;
-	}
-
-	@media (max-width: 500px) {
-		min-width: 22em;
-		height: 15em;
-	}
-	@media (max-width: 470px) {
-		min-width: 20em;
-		height: 12em;
-	}
-	@media (max-width: 375px) {
-		min-width: 18em;
-		height: 12em;
-	}
-	@media (max-width: 275px) {
-		min-width: 12em;
-		height: 8em;
-	}
-	@media (min-width: 800px) and (min-height: 800px) {
-		min-width: 48em;
+		min-width: 38em;
 		height: 28em;
 	}
-	@media (min-width: 1000px) and (min-height: 800px) {
-		min-width: 60em;
-		height: 34em;
+	@media (max-width: 600px) {
+		min-width: 30em;
+		height: 22.5em;
 	}
-	@media (min-width: 1100px) and (min-height: 1100px) {
-		min-width: 70em;
-		height: 42em;
+	@media (max-width: 500px) {
+		min-width: 28em;
+		height: 21em;
 	}
-	@media (min-width: 1200px) and (max-height: 1100px) {
-		min-width: 67em;
-		height: 40em;
-	}
-	@media (min-width: 1300px) and (min-height: 1100px) {
-		min-width: 70em;
-		height: 42em;
-	}
-	@media (min-width: 1500px) and (min-height: 1000px) {
-		min-width: 80em;
-		height: 49em;
+	@media (min-width: 800px) and (min-height: 800px) {
+		min-width: 36em;
+		height: 22em;
 	}
 	@media (min-width: 1000px) and (min-height: 800px) {
 		min-width: 50em;
-		height: 32em;
+		height: 34em;
 	}
+	@media (min-width: 1100px) and (min-height: 1100px) {
+		min-width: 50em;
+		height: 30em;
+	}
+	@media (min-width: 1200px) and (max-height: 1100px) {
+		min-width: 40em;
+		height: 24em;
+	}
+	@media (min-width: 1300px) and (min-height: 1100px) {
+		min-width: 60em;
+		height: 42em;
+	}
+	@media (min-width: 1500px) and (min-height: 1000px) {
+		min-width: 60em;
+		height: 42em;
+	}
+	/* height: 40%; */
+	/* grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr; */
+	/* @media (max-height: 1100px) and (min-width: 700px) {
+		min-width: 55%;
+	}
+	@media (max-height: 700px) and (min-width: 700px) {
+		min-width: 45%;
+	}
+	@media (max-height: 500px) and (min-width: 700px) {
+		min-width: 25%;
+	}
+	@media (max-height: 400px) and (min-width: 700px) {
+		min-width: 15%;
+	}
+	@media (max-height: 300px) and (min-width: 700px) {
+		min-width: 5em;
+	}
+	@media (max-width: 500px) {
+		height: 20em;
+		min-width: 100%;} */
+
 	/* height: 40%; */
 	/* grid-template-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr; */

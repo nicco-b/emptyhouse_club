@@ -9,8 +9,8 @@ export const NavLeftBox = styled.div`
 `
 export const NavRightBox = styled.div`
 	display: grid;
-	grid-column-start: 3;
-	grid-column-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 2;
 	font-size: 0.6em;
 	justify-self: end;
 	/* grid-template-columns: repeat(3, 1fr); */
@@ -41,7 +41,7 @@ export const ToggleText = styled.div`
 	cursor: pointer;
 `
 export const NavCart = styled.div`
-	grid-column: 3;
+	grid-column: 2;
 	white-space: nowrap;
 `
 export const MainTitle = styled.div`
@@ -67,10 +67,17 @@ export const NavTemp = styled.div`
 	font-size: 0.6em;
 	/* grid-template-columns: repeat(3, 0.2fr); */
 	grid-auto-flow: column;
-	width: fit-content;
+	/* width: fit-content; */
 	align-content: center;
-	justify-self: center;
+	/* justify-self: center; */
 	height: 100%;
 	gap: 1em;
 	/* justify-self: center; */
+`
+export const RightNav = styled.div`
+	display: grid;
+	gap: 1em;
+	/* grid-template-columns: 1fr 0.2fr; */
+	width: fit-content;
+	justify-self: end;
 `
