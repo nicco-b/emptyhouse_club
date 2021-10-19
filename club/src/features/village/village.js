@@ -6,6 +6,7 @@ import { Plant } from './objects/Plant'
 import { useEffect, useState } from 'react'
 import { withTheme } from 'styled-components'
 import { useTransition, animated, config } from 'react-spring'
+import { HomeBubble } from './objects/HouseBubble'
 
 const Houses = [
 	{
@@ -23,7 +24,7 @@ const Houses = [
 		top: '0%',
 		zIndex: '1',
 		width: '30%',
-		imageNight: '/homes/tshirt_dark.png',
+		imageNight: '/homes/construction_bubble.png',
 		imageDay: '/homes/tshirt_light.png',
 		slug: '/shop/tshirts',
 		pageId: 'tshirts',
@@ -44,6 +45,46 @@ const Houses = [
 		width: '30%',
 		imageNight: '/homes/patch_dark.png',
 		imageDay: '/homes/patches_light.png',
+		slug: '/shop/patches',
+	},
+]
+const HouseBubbles = [
+	{
+		left: '0%',
+		top: '13%',
+		zIndex: '2',
+		width: '20%',
+		imageNight: '/homes/about_bubble.png',
+		imageDay: '/homes/about_bubble.png',
+
+		slug: '/pages/about',
+	},
+	{
+		left: '17%',
+		top: '-26%',
+		zIndex: '1',
+		width: '26%',
+		imageNight: '/homes/construction_bubble.png',
+		imageDay: '/homes/construction_bubble.png',
+		slug: '/shop/tshirts',
+		pageId: 'tshirts',
+	},
+	{
+		left: '54%',
+		top: '-24%',
+		zIndex: '1',
+		width: '22%',
+		imageNight: '/homes/faq_bubble.png',
+		imageDay: '/homes/faq_bubble.png',
+		slug: '/shop/prison',
+	},
+	{
+		left: '83%',
+		top: '36%',
+		zIndex: '3',
+		width: '17%',
+		imageNight: '/homes/patch_bubble.png',
+		imageDay: '/homes/patches_bubble.png',
 		slug: '/shop/patches',
 	},
 ]
@@ -101,6 +142,56 @@ const Plants = [
 		name: 'figtree',
 		type: 'tree',
 	},
+	{
+		id: 5,
+		left: '83%',
+		top: '84%',
+		zIndex: '4',
+		width: '7%',
+		image: 'figtree.png',
+		name: 'figtree',
+		type: 'tree',
+	},
+	{
+		id: 6,
+		left: '69%',
+		top: '83%',
+		zIndex: '4',
+		width: '5%',
+		image: 'firehydrant.png',
+		name: 'firehydrant',
+		type: 'prop',
+	},
+	{
+		id: 7,
+		left: '30%',
+		top: '98%',
+		zIndex: '4',
+		width: '8%',
+		image: 'pumpkin1.png',
+		name: 'pumpkin1',
+		type: 'prop',
+	},
+	{
+		id: 7,
+		left: '28%',
+		top: '100%',
+		zIndex: '4',
+		width: '8%',
+		image: 'pumpkin2.png',
+		name: 'pumpkin2',
+		type: 'prop',
+	},
+	{
+		id: 7,
+		left: '22%',
+		top: '80%',
+		zIndex: '1',
+		width: '8%',
+		image: 'garbage.png',
+		name: 'garbage',
+		type: 'prop',
+	},
 ]
 const Characters = [
 	{
@@ -112,6 +203,22 @@ const Characters = [
 		name: 'ghost',
 	},
 	{
+		left: '67%',
+		top: '72%',
+		zIndex: '2',
+		width: '9%',
+		image: 'shortredboots.png',
+		name: 'shortredboots',
+	},
+	{
+		left: '57%',
+		top: '92%',
+		zIndex: '2',
+		width: '12%',
+		image: 'greenplantman.png',
+		name: 'greenplantman',
+	},
+	{
 		left: '26%',
 		top: '70%',
 		zIndex: '1',
@@ -120,18 +227,34 @@ const Characters = [
 		name: 'yellowman',
 	},
 	{
-		left: '16%',
-		top: '83%',
+		left: '19%',
+		top: '87%',
 		zIndex: '2',
-		width: '17%',
+		width: '16%',
 		image: 'dogwalks.png',
 		name: 'dogwalks',
+	},
+	{
+		left: '50%',
+		top: '37%',
+		zIndex: '2',
+		width: '8%',
+		image: 'proudpersonamask.png',
+		name: 'proudpersonamask',
+	},
+	{
+		left: '30%',
+		top: '40%',
+		zIndex: '2',
+		width: '6%',
+		image: 'saddoghuman.png',
+		name: 'saddoghuman',
 	},
 	{
 		left: '6%',
 		top: '100%',
 		zIndex: '2',
-		width: '5%',
+		width: '6%',
 		image: 'spiky.png',
 		name: 'spiky',
 	},
@@ -247,6 +370,22 @@ const Village = theme => {
 								const { left, top, zIndex, width, imageDay, imageNight, slug, pageId } = home
 								return (
 									<Home
+										key={slug}
+										absolute
+										left={left}
+										top={top}
+										width={width}
+										image={theme.theme.nightMode ? imageNight : imageDay}
+										zIndex={zIndex}
+										slug={slug}
+										pageId={pageId}
+									/>
+								)
+							})}
+							{HouseBubbles.map(home => {
+								const { left, top, zIndex, width, imageDay, imageNight, slug, pageId } = home
+								return (
+									<HomeBubble
 										key={slug}
 										absolute
 										left={left}
