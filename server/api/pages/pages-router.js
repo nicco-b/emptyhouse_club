@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 			res.status(200).json(result)
 		})
 })
+
 router.get('/:id', (req, res) => {
 	let db_connect = db.getDb('emptyhouseclub')
 	// console.log(req.params)
