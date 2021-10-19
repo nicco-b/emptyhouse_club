@@ -246,7 +246,7 @@ export const Checkout = () => {
 											// errors={formErrors}
 										/>
 									)}
-
+									{/* s */}
 									{pay && (
 										<>
 											<Payment
