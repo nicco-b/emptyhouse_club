@@ -1,11 +1,9 @@
 import { Ground, Box } from './village.styled'
-import { Wallpaper, Grid, TitleBox, Rox, GlobalStyle } from '../../app/app.styled'
+import { Wallpaper, Grid, Rox } from '../../app/app.styled'
 import { Home } from './objects/House'
 import { Character } from './objects/Character'
 import { Plant } from './objects/Plant'
-import { useEffect, useState } from 'react'
 import { withTheme } from 'styled-components'
-import { useTransition, animated, config } from 'react-spring'
 import { HomeBubble } from './objects/HouseBubble'
 
 const Houses = [
@@ -24,7 +22,7 @@ const Houses = [
 		top: '-10%',
 		zIndex: '1',
 		width: '40%',
-		imageNight: '/homes/construction_bubble.png',
+		imageNight: '/homes/tshirt_dark.png',
 		imageDay: '/homes/tshirt_light.png',
 		slug: '/shop/tshirts',
 		pageId: 'tshirts',
@@ -83,7 +81,7 @@ const HouseBubbles = [
 		top: '36%',
 		zIndex: '3',
 		width: '17%',
-		imageNight: '/homes/patch_bubble.png',
+		imageNight: '/homes/patches_bubble.png',
 		imageDay: '/homes/patches_bubble.png',
 		slug: '/shop/patches',
 	},
@@ -297,56 +295,10 @@ const Characters = [
 // 		)
 // 	})
 // }
-const twopapes = [
-	{ index: 0, url: '/grassnight' },
-	{ index: 1, url: '/grassday' },
-]
-// #e1e1e1
+
 const Village = theme => {
-	console.log(theme, 'dldld')
-
-	const [index, set] = useState(false)
-
-	const transitions = useTransition(twopapes, {
-		keys: twopapes.map((item, index) => index),
-		from: { opacity: 0, position: 'absolute' },
-		enter: { opacity: 1, position: 'absolute' },
-		leave: { opacity: 0, position: 'absolute' },
-		// reverse: show,
-		// delay: 4000,
-		// duration: 9000,
-		config: { duration: 850 },
-	})
-
-	const p = () => {
-		return transitions(styles =>
-			theme.theme.nightMode ? (
-				<animated.div style={styles}>
-					<Wallpaper wallpaper='/grassnight.png' />
-				</animated.div>
-			) : (
-				<animated.div style={styles}>
-					<Wallpaper wallpaper='/grassday.png' />
-				</animated.div>
-			)
-		)
-	}
-
-	// const { theme } = props
-	console.log(theme)
-	let currentImageIndex = 0
-	const [activeIndex, setactiveIndex] = useState(0)
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		currentImageIndex === 0 ? setactiveIndex(1) : setactiveIndex(0)
-	// 	}, 3000)
-	// })
 	return (
 		<>
-			{/* {theme.nightMode ? (
-				
-			) : (
-			)} */}
 			{theme.theme.nightMode ? (
 				<Wallpaper wallpaper={'/grassnight.png'} />
 			) : (

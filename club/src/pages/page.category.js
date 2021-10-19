@@ -1,20 +1,15 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Redirect, useLocation, useParams } from 'react-router'
-import { Grid } from '../app/app.styled'
+import { Redirect, useParams } from 'react-router'
 import { BasePage, BasePGrid, PageHeader, PageTitle, PageTitleBox } from './page.styled'
-import { Character } from '../features/village/objects/Character'
 import { CharacterHeader } from '../features/village/village.styled'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { getPage, getPageById, setPageLoading } from '../actions/pageActions'
+import { getPageById, setPageLoading } from '../actions/pageActions'
 import Donut from '../components/Donuts/Donut3'
 import { Page } from './Page'
 
 export const PageCategory = () => {
-	const [api, setApi] = useState()
-	const { pageId, id, category } = useParams()
-	console.log(pageId, id, 'll')
+	const { category } = useParams()
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getPageById(category))
@@ -26,7 +21,6 @@ export const PageCategory = () => {
 	const page = useSelector(state => state.pageReducer.page)
 
 	const [error, setError] = useState('')
-	const { pathname } = useLocation()
 
 	useEffect(() => {
 		setError(pages.error.message)

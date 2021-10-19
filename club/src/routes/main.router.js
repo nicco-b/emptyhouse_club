@@ -3,11 +3,9 @@ import { PageCategory } from '../pages/page.category'
 import { ShopHome } from '../features/shop/shop.home'
 
 import Village from '../features/village/village'
-import { PageId } from '../pages/Page'
 import { NotFound } from '../components/NotFound'
 import { ProductDetail } from '../features/shop/products/ProductDetail'
 import { Cart } from '../features/cart/Cart'
-import { BasePage } from '../pages/page.styled'
 import { Checkout } from '../features/checkout/checkout'
 import { SuccessPage } from '../features/checkout/SuccessPage'
 

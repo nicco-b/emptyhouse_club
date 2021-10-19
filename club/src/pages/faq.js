@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { FQBlock, FQMiddle, FQGrid, FHeader } from './page.styled'
 
 export const FaqPage = () => {

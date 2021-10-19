@@ -1,27 +1,19 @@
-import axios from 'axios'
-import { prominent } from 'color.js'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect, useParams } from 'react-router'
-import { Link } from 'react-router-dom'
 import { getProductById, setProductsLoading } from '../../../actions/shopActions'
 import { Button } from '../../../app/app.styled'
-import { Box } from '../../village/village.styled'
 import Donut from '../../../components/Donuts/Donut3'
 import {
 	A,
-	PDetail,
 	PDetailBottomBox,
 	PDetailDescription,
 	PDetailPrice,
 	PDetailTitle,
 	PPageDescription,
-	ProductDetailDetails,
 	ProductDetailGrid,
-	ProductDetailImages,
 	ProductDetailLeft,
 	ProductDetailRight,
-	ProductNav,
 	PThumbnail,
 	DetailsBox,
 	DetailsBoxTitle,
@@ -50,7 +42,7 @@ export const ProductDetail = () => {
 		return function cleanup() {
 			dispatch(setProductsLoading())
 		}
-	}, [dispatch])
+	}, [category, dispatch, id])
 	const product = useSelector(state => state.shopReducer.product)
 	const shop = useSelector(state => state.shopReducer)
 	const [error, setError] = useState('')
@@ -69,7 +61,7 @@ export const ProductDetail = () => {
 	useEffect(() => {
 		let timer = setTimeout(() => {
 			setAddButtonState('default')
-		}, 500)
+		}, 300)
 		return () => {
 			clearTimeout(timer)
 		}

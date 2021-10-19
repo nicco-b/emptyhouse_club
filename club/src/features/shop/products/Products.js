@@ -1,7 +1,5 @@
-import axios from 'axios'
-
 import { useEffect, useState } from 'react'
-import { useParams, useRouteMatch } from 'react-router'
+import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import {
 	ProductBox,
@@ -14,11 +12,10 @@ import {
 } from './products.styled'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { getAllProducts, setProductsLoading } from '../../../actions/shopActions'
+import { getAllProducts } from '../../../actions/shopActions'
 import Donut from '../../../components/Donuts/Donut3'
 
 export const Products = ({ page }) => {
-	const { path } = useRouteMatch()
 	const dispatch = useDispatch()
 	const { category } = useParams()
 	const pag = useSelector(state => state.pageReducer.page.parent)
@@ -29,7 +26,7 @@ export const Products = ({ page }) => {
 			console.log('why are you calling me')
 			dispatch(getAllProducts(category))
 		}
-	}, [dispatch])
+	}, [category, dispatch, pag])
 	const [prod, setProd] = useState([])
 	const cat = useSelector(state => state.shopReducer.products)
 	const loading = useSelector(state => state.shopReducer.loading)

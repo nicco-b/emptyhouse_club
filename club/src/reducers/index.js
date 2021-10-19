@@ -4,8 +4,6 @@ import shopReducer from './shopReducer'
 import cartReducer from './cartReducer'
 import cart, * as fromCart from './cartss'
 import { getProductById } from '../actions/shopActions'
-import { useDispatch } from 'react-redux'
-import axios from 'axios'
 
 const rootReducer = combineReducers({
 	pageReducer,

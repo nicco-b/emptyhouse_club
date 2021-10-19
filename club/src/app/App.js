@@ -1,38 +1,17 @@
-import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import Donut from '../components/Donuts/Donut3'
 import { TopNav } from '../components/navigation/TopNav'
-import Village from '../features/village/village'
-import { BasePage, BasePGrid } from '../pages/page.styled'
+
 import { MainRouter } from '../routes/main.router'
-import {
-	Wallpaper,
-	H1,
-	Padding,
-	Main,
-	BaseGrid,
-	Grid,
-	TitleBox,
-	Rox,
-	NavTemp,
-	GlobalStyle,
-} from './app.styled'
+
+import { Main, BaseGrid, GlobalStyle } from './app.styled'
 import Head from './Head'
 
 const App = () => {
-	// Wallpaper.defaultProps = {
-	// 	src: 'http:localhost:3000/artificialcrapgrass.png',
-	// }
-	const def = {
-		nightMode: false,
-		boxBG: '#F7F7F790',
-		wallpaperBg: '#dfc9a6',
-		bg: '#E1E1E1',
-		// wallpaper: '/grass4.jpg',
-		objFilter: 'brightness(100%)',
-	}
+	const { pathname } = useLocation()
+	console.log('pathname: ', pathname)
+
 	const day = {
 		mainFont: '#505252',
 		nightMode: false,
@@ -49,18 +28,20 @@ const App = () => {
 		fontActive: '#5a6865',
 		nightMode: true,
 		wallpaperBg: '#5a6865',
-		bg: '#aaa',
+		bg: '#D6D5D0',
+
 		wallpaper: '/grass_dark.png',
 		objFilter: 'brightness(74%)',
 	}
 	var hr = new Date().getHours()
 
-	const [theme, setTheme] = useState(day)
+	const [theme, setTheme] = useState(night)
 	useEffect(() => {
 		if (hr > 6 && hr < 20) {
 			setTheme(day)
 		}
-	}, [hr])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 	return (
 		<ThemeProvider theme={theme}>
 			<Head theme={theme} title={'emptyhouseclub'} />
@@ -74,6 +55,8 @@ const App = () => {
 					<MainRouter />
 					{/* </BasePGrid> */}
 					{/* </BasePage> */}
+					{/* {pathname === '/pages/about' && <Footer />}
+					{pathname === '/pages/faq' && <Footer />} */}
 				</BaseGrid>
 			</Main>
 		</ThemeProvider>

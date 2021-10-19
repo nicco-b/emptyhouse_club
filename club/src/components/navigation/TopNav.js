@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux'
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Main, NavBox } from '../../app/app.styled'
+import { NavLink, useLocation } from 'react-router-dom'
+import { NavBox } from '../../app/app.styled'
 import { CartIcon } from '../../features/cart/cart.styled'
-import { getTotal } from '../../reducers'
 import { getQuantity } from '../../reducers/cartss'
 import {
 	MainTitle,
@@ -10,7 +9,6 @@ import {
 	NavLeftBox,
 	NavRightBox,
 	TempTwo,
-	ToggleText,
 	NavTemp,
 	RightNav,
 } from './Nav.styled'
@@ -40,8 +38,6 @@ export const TopNav = ({ setTheme, theme, day, night }) => {
 	}, 0)
 	const { pathname } = useLocation()
 	// const cartQuantity = getQuantity(cart, '6160fdd1b1464786c699e300')
-	const cartTotal = useSelector(state => state.cartReducer.total)
-	console.log(e)
 	return (
 		<NavBox>
 			<NavLeftBox>

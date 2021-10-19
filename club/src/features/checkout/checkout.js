@@ -4,31 +4,24 @@ import {
 	CartPGrid,
 	CartShipping,
 	CartSumGrid,
-	CartSummary,
-	CartSumProductItem,
-	CartSumProducts,
 	CartSumSubGrid,
 	CartSumSubHeader,
 	CartSumTitle,
 	CartTitle,
 	IncrementButtonBox,
-	LineSeparator,
-	SumItemTitle,
 } from '../cart/cart.styled'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { getQuantity } from '../../reducers/cartss'
-import { BaseCheckout, Fieldz, Form } from './checkout.styled'
-import { Link } from 'react-router-dom'
+import { Fieldz } from './checkout.styled'
 import useForm from '../../hooks/useForm'
 import Shipping from './Shipping'
 import { Payment } from './Payment'
 import { Redirect } from 'react-router'
 import '../../components/inputs/textInput.css'
-import { TextInput } from '../../components/inputs/TextInput'
-import { RadioInput } from '../../components/inputs/RadioInput'
+
 import { ShippingType } from './ShippingType'
 import { CartSummaryContainer } from './CartSummary/CartSummaryContainer'
 import { useHistory } from 'react-router-dom'
@@ -48,14 +41,7 @@ const ShippingTypeInits = {
 }
 
 export const Checkout = () => {
-	const convertToUsd = n => {
-		const num = n
-		const dollars = num / 100
-		const usd = dollars.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
-		return usd
-	}
 	const [ShippingTypeInit, setShippingTypeInit] = useState(ShippingTypeInits)
-	const dispatch = useDispatch()
 	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 	const cart = useSelector(state => state.cart)
@@ -89,7 +75,6 @@ export const Checkout = () => {
 			})
 		const total = stateCart && sub.reduce((total, sub) => total + sub, 0)
 		setCartToat(total)
-		console.log(sub)
 	}, [cart, stateCart])
 	useEffect(() => {
 		const getRegistrations = async event => {
@@ -105,13 +90,11 @@ export const Checkout = () => {
 				})
 			})
 			const registrations = await Promise.all(promises).then(values => {
-				console.log(values, 'kl')
 				return values
 			})
 
 			// })
 			//need more redux actions for this cart stuff
-			console.log(registrations, 'rrrr')
 
 			setProd(registrations.reduce((acc, curr) => acc.concat(curr), []))
 		}
@@ -120,6 +103,7 @@ export const Checkout = () => {
 		// return function cleanup() {
 		// 	setProd([])
 		// }
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [cart.addedIds])
 	useEffect(() => {
 		const getCarrt = async () => {
@@ -131,13 +115,12 @@ export const Checkout = () => {
 			setStateCart(e)
 		}
 		getCarrt()
-	}, [prod])
-	const [values, handleChanges, clearForm, setValues, active] = useForm(ShippingInfo)
+	}, [cart.addedIds, prod])
+	const [values, handleChanges, clearForm, active] = useForm(ShippingInfo)
 
 	const [pay, setPay] = useState(false)
 	const [shipping, setShipping] = useState(false)
 
-	console.log(cart, 'carrt')
 	const inputChange = value => {
 		// 🔥 STEP 10- RUN VALIDATION WITH YUP
 

@@ -1,4 +1,4 @@
-import { Card, CardImg, House, PlantBox } from '../village.styled'
+import { Card, CardImg, PlantBox } from '../village.styled'
 
 export const Plant = plant => {
 	const { left, top, zIndex, width, image, name, absolute } = plant

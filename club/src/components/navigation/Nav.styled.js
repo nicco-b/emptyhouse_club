@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
 export const NavLeftBox = styled.div`
 	display: grid;
 	grid-column-start: 1;

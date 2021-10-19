@@ -1,10 +1,7 @@
-import { useState } from 'react'
-import styled from 'styled-components'
 import { Button } from '../../app/app.styled'
 import { RadioInput } from '../../components/inputs/RadioInput'
-import { TextInput } from '../../components/inputs/TextInput'
 import { CartSumSubHeader } from '../cart/cart.styled'
-import { Form, StateDrop } from './checkout.styled'
+import { Form } from './checkout.styled'
 export const ShippingType = ({
 	setPay,
 	values,
@@ -14,8 +11,6 @@ export const ShippingType = ({
 	SetShippingTypeInit,
 	change,
 }) => {
-	const [succeeded] = useState(false)
-	const [disabled] = useState(false)
 	const onChange = e => {
 		const { value } = e.target
 		change(value)

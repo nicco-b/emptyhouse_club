@@ -3,8 +3,7 @@ import { withTheme } from 'styled-components'
 export const Head = ({ title, description, meta = [], color, mode, theme }) => {
 	console.log(theme, 'lll')
 	// console.log(mode.mode, 'k')
-	const color2 = '#f234900'
-	const color3 = '#000000'
+
 	return (
 		<Helmet
 			title={title}

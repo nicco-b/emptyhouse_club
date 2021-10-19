@@ -11,9 +11,8 @@ export const Payment = ({
 	TotalCart,
 	shippingType,
 }) => {
-	const promise = loadStripe(
-		'pk_test_51Jle1MDR7p1FRg7Azj0w6r2yoFKJoOElGGlt20GdK4f4hxU3gj4XClu8OCQ0vZ2VNc3g0eZ0a3z0Jg7KJ5zszzJZ00vTjDzHYB'
-	)
+	const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
+
 	return (
 		<div>
 			<Elements

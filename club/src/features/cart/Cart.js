@@ -3,13 +3,10 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCart, removeCart, removeFromCart } from '../../actions/cartActions'
-import { getAllProducts, getProductById } from '../../actions/shopActions'
 import { BasePage, BasePGrid, PageHeader, PageTitle, PageTitleBox } from '../../pages/page.styled'
-import { getCartProducts, getTotal } from '../../reducers'
-import { getCartQuantity, getQuantity } from '../../reducers/cartss'
+import { getQuantity } from '../../reducers/cartss'
 import { ProductBox, ProductBoxImg, PThumbnail } from '../shop/products/products.styled'
-import Donut from '../../components/Donuts/Donut3'
-import { Line } from 'react-lineto'
+
 import {
 	BaseCart,
 	BottomBox,
@@ -21,24 +18,12 @@ import {
 	CartItemTop,
 	CartPGrid,
 	CartProducts,
-	CartSumGrid,
-	CartSummary,
-	CartSumProductItem,
-	CartSumProducts,
-	CartSumSubGrid,
-	CartSumSubHeader,
-	CartSumTitle,
-	CartThumb,
-	CartTitle,
-	CartTotal,
 	IncrementButtonBox,
 	LineSeparator,
 	RightBottomBox,
 	RightTopBox,
-	SumItemTitle,
 	UnderSummary,
 } from './cart.styled'
-import { Line15 } from '../../components/Line 14'
 import { CartSummaryContainer } from '../checkout/CartSummary/CartSummaryContainer'
 import { Button } from '../../app/app.styled'
 import { Plus } from '../../components/svg/plus'
@@ -48,7 +33,6 @@ const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 export const Cart = () => {
 	const [prod, setProd] = useState([])
 	const [stateCart, setStateCart] = useState([])
-	const [pagesV, setPagesV] = useState([])
 	const dispatch = useDispatch()
 	const cart = useSelector(state => state.cart)
 	const p = cart.addedIds.map(id => {
@@ -119,7 +103,7 @@ export const Cart = () => {
 			setStateCart(e)
 		}
 		getCarrt()
-	}, [prod])
+	}, [cart.addedIds, prod])
 
 	const [imgLoading, setImgLoading] = useState(true)
 

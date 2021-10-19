@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styled from 'styled-components'
 import { Button } from '../../app/app.styled'
 import { TextInput } from '../../components/inputs/TextInput'
 import { CartSumSubHeader } from '../cart/cart.styled'

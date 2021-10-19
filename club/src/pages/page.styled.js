@@ -5,13 +5,13 @@ export const SocialBox = styled.div`
 	padding-top: 1em;
 	width: fit-content;
 	justify-items: center;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 `
 export const SocialGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 1em;
-	> img {
+	> a {
 		width: 100%;
 		height: auto;
 	}
@@ -89,4 +89,10 @@ export const PageHeader = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	/* grid-template-rows: minmax(20px, 200px); */
+`
+export const SocialImg = styled.img.attrs(props => ({
+	src: props.src,
+	key: props.i,
+}))`
+	width: 100%;
 `

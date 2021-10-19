@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { CardBox, Form } from './checkout.styled'
-import { TextInput } from '../../components/inputs/TextInput'
 import axios from 'axios'
 import Donut from '../../components/Donuts/Donut3'
-import { useDispatch } from 'react-redux'
-import { resetCart } from '../../actions/cartActions'
+// import { useDispatch } from 'react-redux'
+// import { resetCart } from '../../actions/cartActions'
 import { Button } from '../../app/app.styled'
 export default function CheckoutForm(props) {
-	const { succeeded, setSucceeded, shippingInfo, cart, stateCart, TotalCart, shippingType } = props
+	const { succeeded, setSucceeded, shippingInfo, cart, TotalCart, shippingType } = props
 	const [error, setError] = useState(null)
 	const [processing, setProcessing] = useState('')
 	const [disabled, setDisabled] = useState(true)
-	const [clientSecret, setClientSecret] = useState('')
-	const dispatch = useDispatch()
+	// const [clientSecret, setClientSecret] = useState('')
+	// const dispatch = useDispatch()
 	const stripe = useStripe()
 	const elements = useElements()
 	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT

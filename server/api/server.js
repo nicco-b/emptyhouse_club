@@ -19,6 +19,7 @@ const pagesRouter = require('./pages/pages-router')
 const shopRouter = require('./shop/shop-router')
 const payment = require('./shop/payment')
 const orders = require('./orders/orders')
+const artists = require('./artists/artists')
 
 const { application } = require('express')
 
@@ -50,6 +51,13 @@ server.use(
 		origin: '*',
 	}),
 	orders
+)
+server.use(
+	'/api/artists',
+	cors({
+		origin: '*',
+	}),
+	artists
 )
 server.get('/', (req, res) => {
 	res.status(200).json('assets.emptyhouseclub.com v1.02')

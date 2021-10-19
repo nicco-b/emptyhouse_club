@@ -1,4 +1,4 @@
-import { Card, CardImg, House, CharacterBox } from '../village.styled'
+import { Card, CardImg, CharacterBox } from '../village.styled'
 
 //Character model
 // character theming with styled components for states??
