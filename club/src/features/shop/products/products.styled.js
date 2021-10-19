@@ -57,6 +57,7 @@ export const ProductBoxImg = styled.div`
 	/* display: none; */
 	/* background-color: #767a7c; */
 	z-index: 999;
+
 	/* > img::before {
 		content: '';
 		padding-bottom: 100%;
