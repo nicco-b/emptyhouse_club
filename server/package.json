@@ -1,0 +1,26 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "empty house server",
+	"main": "server.js",
+	"author": "niccob",
+	"license": "ISC",
+	"dependencies": {
+		"connect-mongo": "^4.6.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"express-session": "^1.17.2",
+		"mongodb": "^4.1.3",
+		"mongoose": "^6.0.10",
+		"nodemon": "^2.0.13",
+		"path": "^0.12.7",
+		"serve-favicon": "^2.5.0",
+		"serve-static": "^1.14.1",
+		"stripe": "^8.182.0"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"server": "nodemon index.js"
+	}
+}
