@@ -219,7 +219,7 @@ export const House = styled.img.attrs(props => ({
 	height: auto;
 	width: 100%;
 	transition-delay: 2s;
-
+	pointer-events: ${props => (props.disabled ? 'none' : 'auto')};
 	transition: 0.9s;
 
 	filter: ${props => (props.theme.objFilter ? props.theme.objFilter : null)};

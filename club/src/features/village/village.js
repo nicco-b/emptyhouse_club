@@ -14,7 +14,7 @@ const Houses = [
 		width: '30%',
 		imageNight: '/homes/about_dark.png',
 		imageDay: '/homes/about_light.png',
-
+		disabled: false,
 		slug: '/pages/about',
 	},
 	{
@@ -26,6 +26,7 @@ const Houses = [
 		imageDay: '/homes/tshirt_light.png',
 		slug: '/shop/tshirts',
 		pageId: 'tshirts',
+		disabled: true,
 	},
 	{
 		left: '67%',
@@ -35,6 +36,7 @@ const Houses = [
 		imageNight: '/homes/faq_dark.png',
 		imageDay: '/homes/faq_light.png',
 		slug: '/pages/faq',
+		disabled: false,
 	},
 	{
 		left: '72%',
@@ -44,6 +46,7 @@ const Houses = [
 		imageNight: '/homes/patch_dark.png',
 		imageDay: '/homes/patches_light.png',
 		slug: '/shop/patches',
+		disabled: true,
 	},
 ]
 const HouseBubbles = [
@@ -85,6 +88,15 @@ const HouseBubbles = [
 		imageDay: '/homes/patches_bubble.png',
 		slug: '/shop/patches',
 	},
+	{
+		left: '12%',
+		top: '9%',
+		zIndex: '2',
+		width: '80%',
+		imageNight: '/storeclosed.png',
+		imageDay: '/storeclosed.png',
+		slug: '/pages/about',
+	},
 ]
 const Plants = [
 	{
@@ -112,8 +124,8 @@ const Plants = [
 		id: 3,
 
 		left: '-5%',
-		top: '60%',
-		zIndex: '3',
+		top: '50%',
+		zIndex: '2',
 		width: '25%',
 		image: 'birchtree2.png',
 		name: 'birchtree2',
@@ -124,7 +136,7 @@ const Plants = [
 
 		left: '55%',
 		top: '23%',
-		zIndex: '2',
+		zIndex: '1',
 		width: '20%',
 		image: 'birchtree3.png',
 		name: 'birchtree3',
@@ -186,7 +198,7 @@ const Characters = [
 	{
 		left: '33%',
 		top: '44%',
-		zIndex: '2',
+		zIndex: '1',
 		width: '7%',
 		image: 'ghost.png',
 		name: 'ghost',
@@ -208,7 +220,7 @@ const Characters = [
 		name: 'greenplantman',
 	},
 	{
-		left: '26%',
+		left: '30%',
 		top: '70%',
 		zIndex: '1',
 		width: '9%',
@@ -226,7 +238,7 @@ const Characters = [
 	{
 		left: '50%',
 		top: '37%',
-		zIndex: '2',
+		zIndex: '1',
 		width: '7%',
 		image: 'proudpersonamask.png',
 		name: 'proudpersonamask',
@@ -241,9 +253,9 @@ const Characters = [
 	},
 	{
 		left: '6%',
-		top: '90%',
+		top: '80%',
 		zIndex: '2',
-		width: '8%',
+		width: '7%',
 		image: 'spiky.png',
 		name: 'spiky',
 	},
@@ -310,9 +322,10 @@ const Village = theme => {
 					<Ground>
 						<Box>
 							{Houses.map(home => {
-								const { left, top, zIndex, width, imageDay, imageNight, slug, pageId } = home
+								const { left, top, zIndex, width, imageDay, imageNight, slug, pageId, disabled } = home
 								return (
 									<Home
+										disabled={disabled}
 										key={slug}
 										absolute
 										left={left}
