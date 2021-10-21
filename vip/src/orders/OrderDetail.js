@@ -6,12 +6,13 @@ export const OrderDetail = ({ selectedOrder }) => {
 	const [ord, setOrd] = useState({})
 	const { id } = useParams()
 	const history = useHistory()
+	const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 	useEffect(() => {
-		axios.get(`http://localhost:2222/api/orders/${id}`).then(orders => {
+		axios.get(`${API_ENDPOINT}/api/orders/${id}`).then(orders => {
 			return setOrd(orders.data)
 		})
-	}, [id])
+	}, [id, API_ENDPOINT])
 
 	return (
 		<>
