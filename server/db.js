@@ -46,8 +46,7 @@
 //     connect,
 //     get,
 //     close
-// };
-
+// }
 const { MongoClient } = require('mongodb')
 const Db = process.env.DB_URI
 const client = new MongoClient(Db, {
