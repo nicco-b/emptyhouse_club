@@ -35,7 +35,7 @@ const App = () => {
 	}
 	var hr = new Date().getHours()
 
-	const [theme, setTheme] = useState(night)
+	const [theme, setTheme] = useState(day)
 	useEffect(() => {
 		if (hr > 6 && hr < 20) {
 			setTheme(day)
