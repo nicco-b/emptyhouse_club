@@ -1,4 +1,3 @@
-import useOrderState from '../hooks/useOrderState'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -7,14 +6,12 @@ export const OrderDetail = ({ selectedOrder }) => {
 	const [ord, setOrd] = useState({})
 	const { id } = useParams()
 	const history = useHistory()
-	const getOrder = () => {
-		return axios.get(`http://localhost:2222/api/orders/${id}`).then(orders => {
+
+	useEffect(() => {
+		axios.get(`http://localhost:2222/api/orders/${id}`).then(orders => {
 			return setOrd(orders.data)
 		})
-	}
-	useEffect(() => {
-		getOrder()
-	}, [])
+	}, [id])
 
 	return (
 		<>
