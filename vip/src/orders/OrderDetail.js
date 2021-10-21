@@ -1,7 +1,10 @@
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { OrderDBox, OrderDeets } from './orderDetails.styled'
+import UpdateIconRed from '../updatediconred'
+import UpdateIcon from '../updatedicon'
+
+import { OrderDBox, OrderDeets, StatusBox } from './orderDetails.styled'
 export const OrderDetail = ({ selectedOrder }) => {
 	const [ord, setOrd] = useState({})
 	const { id } = useParams()
@@ -18,7 +21,15 @@ export const OrderDetail = ({ selectedOrder }) => {
 		<>
 			<OrderDeets>
 				<button onClick={() => history.goBack()}>back</button>
-
+				{ord.status && ord.status === 'payment required' ? (
+					<StatusBox>
+						<UpdateIconRed /> {ord.status}
+					</StatusBox>
+				) : (
+					<StatusBox>
+						<UpdateIcon /> paid
+					</StatusBox>
+				)}
 				{ord.shippingInfo && (
 					<OrderDBox>
 						{/* <div>{ord._id}</div> */}
