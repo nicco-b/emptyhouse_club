@@ -49,8 +49,7 @@
 // };
 
 const { MongoClient } = require('mongodb')
-const Db =
-	'mongodb+srv://niccob:Goldlight1!@realmcluster.olens.mongodb.net/?retryWrites=true&w=majority'
+const Db = process.env.DB_URI
 const client = new MongoClient(Db, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,

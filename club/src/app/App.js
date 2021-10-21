@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { TopNav } from '../components/navigation/TopNav'
 
@@ -9,8 +9,8 @@ import { Main, BaseGrid, GlobalStyle } from './app.styled'
 import Head from './Head'
 
 const App = () => {
-	const { pathname } = useLocation()
-	console.log('pathname: ', pathname)
+	// const { pathname } = useLocation()
+	// console.log('pathname: ', pathname)
 
 	const day = {
 		mainFont: '#505252',

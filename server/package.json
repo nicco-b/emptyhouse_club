@@ -21,6 +21,6 @@
 	},
 	"scripts": {
 		"start": "node index.js",
-		"server": "nodemon index.js"
+		"server": "NODE_ENV=development nodemon index.js"
 	}
 }

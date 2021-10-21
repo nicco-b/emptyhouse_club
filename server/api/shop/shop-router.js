@@ -63,10 +63,8 @@ router.get('/:category', async (req, res) => {
 		.aggregate(agg)
 		.toArray(function (err, result) {
 			if (!result) {
-				console.log(err, 'err shoprouter 1')
 				res.status(404).json('p not found')
 			} else if (result.length < 1) {
-				console.log(err, 'err shoprouter 2')
 				res.status(404).json('not found')
 			} else {
 				// console.log(result)

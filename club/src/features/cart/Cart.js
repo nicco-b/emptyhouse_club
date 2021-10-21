@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addToCart, removeCart, removeFromCart } from '../../actions/cartActions'
+import { addToCart, removeCart, removeFromCart, resetCart } from '../../actions/cartActions'
 import { BasePage, BasePGrid, PageHeader, PageTitle, PageTitleBox } from '../../pages/page.styled'
 import { getQuantity } from '../../reducers/cartss'
 import { ProductBox, ProductBoxImg, PThumbnail } from '../shop/products/products.styled'
@@ -71,18 +71,17 @@ export const Cart = () => {
 						return res.data
 					})
 					.catch(error => {
-						console.log(error, 'sdffs')
-						return error
+						if (error) {
+							dispatch(resetCart())
+						}
 					})
 			})
 			const registrations = await Promise.all(promises).then(values => {
-				console.log(values, 'kl')
 				return values
 			})
 
 			// })
 			//need more redux actions for this cart stuff
-			console.log(registrations, 'rrrr')
 
 			setProd(registrations.reduce((acc, curr) => acc.concat(curr), []))
 		}
@@ -91,8 +90,7 @@ export const Cart = () => {
 		// return function cleanup() {
 		// 	setProd([])
 		// }
-	}, [cart.addedIds])
-	console.log(prod, 'PENIS BOY')
+	}, [cart.addedIds, dispatch])
 
 	useEffect(() => {
 		const getCarrt = async () => {
@@ -107,13 +105,9 @@ export const Cart = () => {
 
 	const [imgLoading, setImgLoading] = useState(true)
 
-	console.log(prod, 'ppp')
 	const handleRemove = c => {
 		const q = getQuantity(cart, c._id)
-		console.log(q, 'sdf')
 		if (q === 1) {
-			console.log('gdfgdfgfdg')
-			// dispatch(removeCart(c._id))
 		} else {
 			dispatch(removeFromCart(c))
 		}
@@ -128,7 +122,6 @@ export const Cart = () => {
 			})
 		const total = stateCart && sub.reduce((total, sub) => total + sub, 0)
 		setCartToat(total)
-		console.log(sub)
 	}, [cart, stateCart])
 	const convertToUsd = n => {
 		const num = n
