@@ -23,7 +23,7 @@ jobs:
       node-version: ${{ matrix.node-version }}
    - run: cd club && npm  i
 
-   - run: cd club && npm run build --if-present
+   - run: cd vip && npm run build --if-present
      env:
       REACT_APP_API_ENDPOINT: ${{ secrets.REACT_APP_API_ENDPOINT }}
       REACT_APP_STRIPE_PUBLISHABLE_KEY: ${{ secrets.REACT_APP_STRIPE_PUBLISHABLE_KEY}}

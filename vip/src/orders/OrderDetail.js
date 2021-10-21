@@ -34,7 +34,7 @@ export const OrderDetail = ({ selectedOrder }) => {
 							{ord.shippingInfo.city}, {ord.shippingInfo.state} {ord.shippingInfo.postalCode}
 						</div>
 						<div></div>
-						<div></div>
+						<div>l</div>
 					</OrderDBox>
 				)}
 				{ord.cart &&
