@@ -7,7 +7,7 @@ export const SOrderCard = styled.div`
 	align-items: center;
 	border: 0.5px solid #d0d0d0;
 	border-radius: 4px;
-	width: 400px;
+	/* width: 100vw; */
 	/* white-space: nowrap; */
 	grid-template-columns: 1fr 2fr 1fr 1fr;
 	/* width: fit-content; */
@@ -19,6 +19,7 @@ export const SOrderCard = styled.div`
 `
 export const LongId = styled.div`
 	overflow: hidden;
+	width: 100px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	/* display: inline-grid; */

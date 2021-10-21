@@ -5,4 +5,6 @@ export const MainMiddle = styled.div`
 
 	/* max-width: 500px; */
 	justify-content: center;
+	padding: 1em;
+	padding-bottom: 6em;
 `
