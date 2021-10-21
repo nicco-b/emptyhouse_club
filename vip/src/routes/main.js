@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router'
+import { Route, Switch } from 'react-router'
 import useOrderState from '../hooks/useOrderState'
 import { ListContainer } from '../list/ListContainer'
 import { OrderDetail } from '../orders/OrderDetail'

@@ -1,4 +1,3 @@
-import { ListContainer } from './list/ListContainer'
 import { MainRouter } from './routes/main'
 
 export const App = () => {
