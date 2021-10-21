@@ -10,6 +10,19 @@ router.get('/all', async (req, res) => {
 		res.status(200).json(cursor)
 	}
 })
+router.get('/:id', async (req, res) => {
+	let db_connect = db.getDb('emptyhouseclub')
+	function checkId(ids) {
+		if (ObjectId.isValid(`${ids}`)) {
+			return ObjectId(ids)
+		} else res.status(404).json('poo')
+	}
+	const cursor = await db_connect.collection('orders').findOne({ _id: checkId(req.params.id) })
+	console.log(cursor)
+	if (cursor) {
+		res.status(200).json(cursor)
+	}
+})
 
 const ObjectId = require('mongodb').ObjectId
 const getQuantity = (arr, id) => {
