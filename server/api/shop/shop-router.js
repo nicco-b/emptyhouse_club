@@ -58,15 +58,15 @@ router.get('/:category', async (req, res) => {
 
 	let db_connect = db.getDb('emptyhouseclub')
 
-	const aggCursor = await db_connect
+	await db_connect
 		.collection('products')
 		.aggregate(agg)
 		.toArray(function (err, result) {
 			if (!result) {
-				console.log(err)
+				console.log(err, 'err shoprouter 1')
 				res.status(404).json('p not found')
 			} else if (result.length < 1) {
-				console.log(err)
+				console.log(err, 'err shoprouter 2')
 				res.status(404).json('not found')
 			} else {
 				// console.log(result)

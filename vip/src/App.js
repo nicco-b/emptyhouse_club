@@ -6,7 +6,6 @@ export const App = () => {
 		<div>
 			<div>emptyhouse vip</div>
 			<br />
-
 			<MainRouter />
 		</div>
 	)
