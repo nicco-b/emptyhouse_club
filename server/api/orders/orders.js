@@ -95,7 +95,7 @@ router.post('/', async (req, res) => {
 		cart: await calculateOrderAmount(cart),
 		shippingInfo: shippingInfo,
 		paymentIntent: paymentIntent.paymentIntent,
-		// status: paymentIntent.paymentIntent.status,
+		status: paymentIntent.paymentIntent.status,
 	}
 	// console.log('Total: ', Total)
 	// console.log('order: ', newCart)
