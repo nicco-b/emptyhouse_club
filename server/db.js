@@ -61,7 +61,7 @@ module.exports = {
 		client.connect(function (err, db) {
 			// Verify we got a good "db" object
 			if (db) {
-				_db = db.db('emptyhouseclub')
+				_db = db.db(process.env.DB_NAME)
 				console.log('mongoDb good')
 			}
 			return callback(err)

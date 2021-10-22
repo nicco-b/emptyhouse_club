@@ -32,4 +32,5 @@ jobs:
    - run: cd ../../../../public/server/server && pwd && NODE_ENV=production pm2 reload index.js --update-env
      env:
       DB_URI: ${{ secrets.DB_URI }}
+      DB_NAME: ${{ secrets.DB_NAME }}
       STRIPE_SECRET: ${{ secrets.STRIPE_SECRET}}
