@@ -88,7 +88,7 @@ export default function CheckoutForm(props) {
 	// 		})
 	// 		.then(data => {
 	// 			setClientSecret(data.clientSecret)
-	// 		})
+	// 		}
 	// }, [])
 	const handleSubmit = async ev => {
 		ev.preventDefault()
