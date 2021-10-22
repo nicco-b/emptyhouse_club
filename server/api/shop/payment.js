@@ -16,7 +16,7 @@ const getQuantity = (arr, id) => {
 //readall
 const getCartProducts = async cart => {
 	try {
-		let db_connect = await db.getDb('emptyhouseclub')
+		let db_connect = await db.getDb()
 		const mapped = await getQuantity(cart.quantityById)
 		// console.log(mapped, 'mapped')
 		const ids = mapped.map(id => ObjectId(id.id))
@@ -83,16 +83,19 @@ const calculateOrderAmount = async (cart, shippingType) => {
 }
 
 router.post('/', async (req, res) => {
-	const { cart, shippingInfo, shippingType, total } = req.body
-	// console.log(cart, 'CART', shippingInfo, 'SHIPPING', shippingType)
-	// Create a PaymentIntent with the order amount and currency
-	const paymentIntent = await stripe.paymentIntents.create({
-		amount: await calculateOrderAmount(cart, shippingType),
-		currency: 'usd',
-	})
-	res.send({
-		clientSecret: paymentIntent.client_secret,
-		id: paymentIntent.id,
-	})
+	try {
+		const { cart, shippingInfo, shippingType, total } = req.body
+		const paymentIntent = await stripe.paymentIntents.create({
+			amount: await calculateOrderAmount(cart, shippingType),
+			currency: 'usd',
+		})
+		res.send({
+			clientSecret: paymentIntent.client_secret,
+			id: paymentIntent.id,
+		})
+	} catch (error) {
+		console.log(error, 'pI err')
+		res.status(500).json(error)
+	}
 })
 module.exports = router

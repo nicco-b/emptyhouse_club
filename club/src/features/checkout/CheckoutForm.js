@@ -100,21 +100,6 @@ export default function CheckoutForm(props) {
 			return
 		}
 		setProcessing(true)
-		const order = await {
-			cart: cart,
-			shippingInfo: shippingInfo,
-			Total: TotalCart,
-		}
-
-		const forder = await axios
-			.post(`${API_ENDPOINT}/api/orders/`, order)
-			.then(res => {
-				console.log(order, 'here')
-				return res.data
-			})
-			.catch(err => {
-				return console.log(err)
-			})
 
 		const { clientSecret } = await fetch(`${API_ENDPOINT}/api/payment`, {
 			method: 'POST',
@@ -141,20 +126,38 @@ export default function CheckoutForm(props) {
 				},
 			},
 		})
-
-		if (payload.error && !forder) {
+		const pI = await stripe.retrievePaymentIntent(clientSecret).then(function (result) {
+			return result
+		})
+		const order = await {
+			cart: cart,
+			shippingInfo: shippingInfo,
+			Total: TotalCart,
+			paymentIntent: await pI,
+		}
+		await axios
+			.post(`${API_ENDPOINT}/api/orders/`, order)
+			.then(res => {
+				console.log(order, pI, 'here')
+				return res.data
+			})
+			.catch(err => {
+				return console.log(err)
+			})
+		if (payload.error) {
 			setError(`Payment failed ${payload.error.message}`)
 			setProcessing(false)
 			console.log(payload.error.message, 'ERR')
-		} else if (forder) {
+		} else {
 			setError(null)
 			setProcessing(false)
 			setSucceeded(true)
 
 			dispatch(resetCart())
-			console.log(payload, forder, 'wanna add?')
+			// console.log(payload, forder, 'wanna add?')
 		}
 	}
+
 	return (
 		<Form id='payment-form' onSubmit={handleSubmit}>
 			<CardBox>

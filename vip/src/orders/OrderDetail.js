@@ -21,13 +21,13 @@ export const OrderDetail = ({ selectedOrder }) => {
 		<>
 			<OrderDeets>
 				<button onClick={() => history.goBack()}>back</button>
-				{ord.status && ord.status === 'payment required' ? (
+				{ord.status && ord.status === 'succeeded' ? (
 					<StatusBox>
-						<UpdateIconRed /> {ord.status}
+						<UpdateIcon /> {ord.status}
 					</StatusBox>
 				) : (
 					<StatusBox>
-						<UpdateIcon /> paid
+						<UpdateIconRed /> {ord.status === 'requires_payment_method' ? 'payment failed' : ord.status}
 					</StatusBox>
 				)}
 				{ord.shippingInfo && (

@@ -56,7 +56,7 @@ router.get('/:category', async (req, res) => {
 		},
 	]
 
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 
 	await db_connect
 		.collection('products')
@@ -104,7 +104,7 @@ router.get('/:category/:id', async (req, res) => {
 		{ $unwind: '$parentPage' },
 	]
 
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 
 	// const query = { page: req.params.category, _id: ObjectId(req.params.id) }
 	const aggCursor = await db_connect.collection('products').aggregate(agg)

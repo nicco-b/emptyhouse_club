@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../../db')
 const ObjectId = require('mongodb').ObjectId
 router.get('/', (req, res) => {
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 	// console.log(req)
 	db_connect
 		.collection('pages')
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 	// console.log(req.params)
 	let query = { pageTitle: req.params.id, live: true }
 	db_connect.collection('pages').findOne(query, function (err, result) {

@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../../db')
 
 router.get('/all', async (req, res) => {
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 
 	const cursor = await db_connect.collection('orders').find({}).toArray()
 	if (cursor) {
@@ -11,7 +11,7 @@ router.get('/all', async (req, res) => {
 	}
 })
 router.get('/:id', async (req, res) => {
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 	function checkId(ids) {
 		if (ObjectId.isValid(`${ids}`)) {
 			return ObjectId(ids)
@@ -37,7 +37,7 @@ const getQuantity = (arr, id) => {
 //readall
 const getCartProducts = async cart => {
 	try {
-		let db_connect = await db.getDb('emptyhouseclub')
+		let db_connect = await db.getDb()
 		const mapped = await getQuantity(cart.quantityById)
 		// console.log(mapped, 'mapped')
 		const ids = mapped.map(id => ObjectId(id.id))
@@ -88,15 +88,18 @@ const calculateOrderAmount = async (cart, shippingType) => {
 }
 
 router.post('/', async (req, res) => {
-	const { cart, Total, shippingInfo } = req.body
+	const { cart, Total, shippingInfo, paymentIntent } = req.body
+	console.log('paymentIntent: ', req.body)
 	const newCart = await {
 		Total: Total,
 		cart: await calculateOrderAmount(cart),
 		shippingInfo: shippingInfo,
+		paymentIntent: paymentIntent.paymentIntent,
+		status: paymentIntent.paymentIntent.status,
 	}
 	// console.log('Total: ', Total)
 	// console.log('order: ', newCart)
-	let db_connect = db.getDb('emptyhouseclub')
+	let db_connect = db.getDb()
 
 	await db_connect.collection('orders').insertOne(newCart, function (error, result) {
 		if (error) {
