@@ -1,14 +1,17 @@
 import styled from 'styled-components'
 import { OrderCard } from './OrderCard'
 import { Link } from 'react-router-dom'
-const StyledOrderList = styled.div`
+export const StyledOrderList = styled.div`
 	display: grid;
 	gap: 1em;
 	background-color: #f1f1f1;
 	/* padding: 1em; */
 	border-radius: 4px;
+	@media (min-width: 600px) {
+		grid-column: 2;
+	}
 `
-const OrdersHeader = styled.div`
+export const OrdersHeader = styled.div`
 	display: flex;
 	justify-content: space-around;
 	padding-bottom: 1em;
@@ -25,7 +28,7 @@ const BoxAlt = styled.div`
 	}
 `
 
-const OrdersLiisst = styled.div`
+export const OrdersLiisst = styled.div`
 	display: grid;
 	/* gap: 1em; */
 	margin: 0.5em;
