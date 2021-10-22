@@ -88,19 +88,18 @@ const calculateOrderAmount = async (cart, shippingType) => {
 }
 
 router.post('/', async (req, res) => {
-	const { cart, Total, shippingInfo, paymentIntent } = req.body
+	const { cart, Total, shippingInfo } = req.body
 	// console.log('paymentIntent: ', req.body)
 	const newCart = await {
 		Total: Total,
 		cart: await calculateOrderAmount(cart),
 		shippingInfo: shippingInfo,
-		paymentIntent: paymentIntent.paymentIntent,
-		status: paymentIntent.paymentIntent.status,
+		// paymentIntent: paymentIntent.paymentIntent,
+		// status: paymentIntent.paymentIntent.status,
 	}
 	// console.log('Total: ', Total)
 	// console.log('order: ', newCart)
 	let db_connect = db.getDb()
-
 	await db_connect.collection('orders').insertOne(newCart, function (error, result) {
 		if (error) {
 			res.status(500).json(error)
