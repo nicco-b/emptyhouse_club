@@ -1,7 +1,7 @@
 import UpdateIconRed from '../updatediconred'
 import UpdateIcon from '../updatedicon'
 
-import { LongId, LongName, ShortBox, SOrderCard } from './OrderCard.styled'
+import { LongId, ShortBox, SOrderCard } from './OrderCard.styled'
 
 export const OrderCard = ({ order }) => {
 	const convertToUsd = n => {
