@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 		} else res.status(404).json('poo')
 	}
 	const cursor = await db_connect.collection('orders').findOne({ _id: checkId(req.params.id) })
-	console.log(cursor)
+	// console.log(cursor)
 	if (cursor) {
 		res.status(200).json(cursor)
 	}
@@ -89,7 +89,7 @@ const calculateOrderAmount = async (cart, shippingType) => {
 
 router.post('/', async (req, res) => {
 	const { cart, Total, shippingInfo, paymentIntent } = req.body
-	console.log('paymentIntent: ', req.body)
+	// console.log('paymentIntent: ', req.body)
 	const newCart = await {
 		Total: Total,
 		cart: await calculateOrderAmount(cart),
