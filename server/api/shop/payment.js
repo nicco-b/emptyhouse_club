@@ -14,6 +14,7 @@ const getQuantity = (arr, id) => {
 	return s
 }
 //readall
+
 const getCartProducts = async cart => {
 	try {
 		let db_connect = await db.getDb()
