@@ -1,3 +1,6 @@
+import UpdateIconRed from '../updatediconred'
+import UpdateIcon from '../updatedicon'
+
 import { LongId, LongName, ShortBox, SOrderCard } from './OrderCard.styled'
 
 export const OrderCard = ({ order }) => {
@@ -17,11 +20,18 @@ export const OrderCard = ({ order }) => {
 	return (
 		<SOrderCard>
 			<LongId>#{order._id}</LongId>
-			<LongName>
+			<LongId>
 				{order.shippingInfo.firstName} {order.shippingInfo.lastName}
-			</LongName>
+			</LongId>
 			<ShortBox>{getTotalItems(order)}</ShortBox>
 			<ShortBox>{convertToUsd(order.Total)}</ShortBox>
+			<ShortBox>
+				{order.status === 'succeeded' ? (
+					<UpdateIcon width={'13px'} />
+				) : (
+					<UpdateIconRed width={'13px'} />
+				)}
+			</ShortBox>
 		</SOrderCard>
 	)
 }

@@ -2,19 +2,18 @@ import styled from 'styled-components'
 
 export const SOrderCard = styled.div`
 	display: grid;
-	height: 3em;
-	padding: 0%.5em;
+	/* height: 3em; */
+	padding: 0.5em;
 	align-items: center;
 	border: 0.5px solid #d0d0d0;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 	/* width: 100vw; */
 	/* white-space: nowrap; */
-	grid-template-columns: 1fr 2fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	/* width: fit-content; */
-	background-color: #fcf9f9;
 	cursor: pointer;
 	&:hover {
-		background-color: #e1e1;
+		background-color: #ecf1ec;
 	}
 `
 export const LongId = styled.div`
@@ -37,4 +36,5 @@ export const ShortBox = styled.div`
 	/* white-space: nowrap; */
 	/* text-overflow: ellipsis; */
 	display: grid;
+	justify-items: center;
 `
