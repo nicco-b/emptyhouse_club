@@ -25,18 +25,7 @@ export const OrderSummary = ({ orders }) => {
 				status: ea.status,
 			}
 		})
-		console.log('new object array: ', p)
-		let total = p.reduce(function (acc, curr) {
-			// console.log(p)
-			return acc + +curr.price * +curr.amount
-		}, 0)
-		// console.log('total: ', total)
-		// const s = p.map(nOrder => {
-		// 	return p.filter(artist => nOrder.artist === 'Lun')
-		// })
 
-		// console.log('s: ', s)
-		console.log('total', total)
 		const result = p.reduce((r, { artist, amount, price }) => {
 			r[artist] = r[artist] || { artist: artist, price: 0 }
 			r[artist].price += +price
@@ -49,8 +38,6 @@ export const OrderSummary = ({ orders }) => {
 		return o
 	})
 
-	const NewOrds = orders.map(ea => ea)
-	console.log('NewOrds: ', NewOrds)
 	const tots = ords.flat()
 	const results = tots.reduce((r, { artist, amount, price }) => {
 		r[artist] = r[artist] || { name: artist, price: 0 }
@@ -60,10 +47,6 @@ export const OrderSummary = ({ orders }) => {
 	}, {})
 	const os = Object.values(results)
 
-	console.log('results: ', os)
-	console.log('tots: ', tots)
-	console.log('ords: ', ords)
-
 	return (
 		<StyledOrderList>
 			<OrdersLiisst>
@@ -71,11 +54,12 @@ export const OrderSummary = ({ orders }) => {
 				<OrdersHeader>
 					<ArtistLeaderBoard>
 						{os.map(a => {
-							console.log(a)
 							return (
-								<div>
+								<div key={a.name}>
 									<div>{a.name}</div>
-									<div>{convertToUsd(a.price)}</div>
+									<div>
+										<b>{convertToUsd(a.price)}</b>
+									</div>
 								</div>
 							)
 						})}

@@ -6,7 +6,6 @@ const useOrderState = () => {
 	const [selectedOrder, setSelectedOrder] = useState({})
 
 	useEffect(() => {
-		console.log('hi')
 		getAllOrders().then(orderz => {
 			setOrders(orderz)
 		})
