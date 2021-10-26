@@ -58,9 +58,12 @@ export const OrdersList = ({ orders, handleOrder }) => {
 	// const clickO = async order => {
 	// 	await handleOrder(order._id)
 	// }
+
 	return (
 		<StyledOrderList>
 			<OrdersQueryBox>
+				{/* <div>{ords.map(ea => ea.map(d => <div>{d.q}</div>))}</div> */}
+
 				<Tab>pending</Tab>
 				{/* <Tab>failed</Tab> */}
 				<Tab active>completed</Tab>
@@ -76,9 +79,9 @@ export const OrdersList = ({ orders, handleOrder }) => {
 				</OrdersHeader>
 				{orders.map(order => {
 					return (
-						<BoxAlt>
+						<BoxAlt key={order._id}>
 							<Link to={{ pathname: `/${order._id}` }}>
-								<OrderCard key={order._id} order={order} />
+								<OrderCard order={order} />
 							</Link>
 						</BoxAlt>
 					)

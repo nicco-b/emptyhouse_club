@@ -1,4 +1,5 @@
-import { OrdersList } from './orders'
+import { OrdersHeader, OrdersList } from './orders'
+import { OrderSummary } from './OrdersSummary'
 
 export const OrdersContainer = ({ orders, handleOrder }) => {
 	// useEffect(() => {
@@ -6,5 +7,10 @@ export const OrdersContainer = ({ orders, handleOrder }) => {
 	// 		return setOrders(orders.data)
 	// 	})
 	// }, [])
-	return <OrdersList orders={orders} handleOrder={handleOrder} />
+	return (
+		<>
+			<OrderSummary orders={orders} />
+			<OrdersList orders={orders} handleOrder={handleOrder} />
+		</>
+	)
 }

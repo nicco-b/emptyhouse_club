@@ -20,28 +20,26 @@ export const ShippingType = ({
 		<Form onSubmit={() => setPay(true)}>
 			<legend>choose shipping option</legend>
 			{/* <br /> */}
-			<div style={{ border: '1px solid grey', padding: '1em', borderRadius: '4px' }}>
-				<RadioInput
-					name='notracking'
-					type='radio'
-					placeholder='$0.50 no tracking'
-					value={'50'}
-					checked={ShippingTypeInit.shippingType === '50'}
-					onChange={onChange}
-				/>
-			</div>
-			<div style={{ border: '1px solid grey', padding: '1em', borderRadius: '4px' }}>
-				<RadioInput
-					name='tracking'
-					type='radio'
-					placeholder='
+
+			<RadioInput
+				name='notracking'
+				type='radio'
+				placeholder='$0.50 no tracking'
+				value={'50'}
+				checked={ShippingTypeInit.shippingType === '50'}
+				onChange={onChange}
+			/>
+
+			<RadioInput
+				name='tracking'
+				type='radio'
+				placeholder='
             $5.00 with tracking
             '
-					onChange={onChange}
-					value={'500'}
-					checked={ShippingTypeInit.shippingType === '500'}
-				/>
-			</div>
+				onChange={onChange}
+				value={'500'}
+				checked={ShippingTypeInit.shippingType === '500'}
+			/>
 			<CartSumSubHeader>
 				<div></div>
 				<Button>next</Button>

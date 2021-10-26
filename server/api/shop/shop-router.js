@@ -105,7 +105,6 @@ router.get('/:category/:id', async (req, res) => {
 	]
 
 	let db_connect = db.getDb()
-
 	// const query = { page: req.params.category, _id: ObjectId(req.params.id) }
 	const aggCursor = await db_connect.collection('products').aggregate(agg)
 	for await (const doc of aggCursor) {
