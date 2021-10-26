@@ -1,4 +1,4 @@
-import { OrdersHeader, OrdersList } from './orders'
+import { OrdersList } from './orders'
 import { OrderSummary } from './OrdersSummary'
 
 export const OrdersContainer = ({ orders, handleOrder }) => {

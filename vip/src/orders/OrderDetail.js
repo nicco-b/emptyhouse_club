@@ -50,7 +50,7 @@ export const OrderDetail = ({ selectedOrder }) => {
 					{ord.cart &&
 						ord.cart.map(ea => {
 							return (
-								<OrderDBox>
+								<OrderDBox key={ea._id}>
 									<div>{ea.title}</div>
 
 									<div>quantity: {ea.amount}</div>
