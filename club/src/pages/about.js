@@ -13,7 +13,7 @@ export const AboutPage = ({ page }) => {
 		axios.get(`${API_ENDPOINT}/api/artists`).then(res => {
 			return setArtists(res.data)
 		})
-	})
+	}, [])
 	return (
 		<FQMiddle>
 			<FQGrid gap={'3em'}>

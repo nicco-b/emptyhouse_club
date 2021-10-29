@@ -21,10 +21,16 @@ export const PageCategory = () => {
 	const page = useSelector(state => state.pageReducer.page)
 
 	const [error, setError] = useState('')
+	const [pa, setPa] = useState('')
 
 	useEffect(() => {
 		setError(pages.error.message)
 	}, [pages])
+
+	useEffect(() => {
+		const parent = page && page.parent
+		setPa(parent)
+	}, [page])
 	return (
 		<>
 			<BasePage>
@@ -33,15 +39,14 @@ export const PageCategory = () => {
 						<Donut />
 					) : error ? (
 						<Redirect to={'/404'} />
-					) : (
-						page && (
-							<>
-								<PageHeader>
-									<PageTitleBox>
-										<PageTitle> {page.pageTitle}</PageTitle>
-									</PageTitleBox>
-									<CharacterHeader>
-										{/* <Character
+					) : pa === 'pages' ? (
+						<>
+							<PageHeader>
+								<PageTitleBox>
+									<PageTitle> {page.pageTitle}</PageTitle>
+								</PageTitleBox>
+								<CharacterHeader>
+									{/* <Character
 										left={'0%'}
 										top={'0%'}
 										width={'calc(10% + 1vmin)'}
@@ -49,11 +54,12 @@ export const PageCategory = () => {
 										zIndex={'2'}
 										name={'temp'}
 									/> */}
-									</CharacterHeader>
-								</PageHeader>
-								<Page page={page} />
-							</>
-						)
+								</CharacterHeader>
+							</PageHeader>
+							<Page page={page} />
+						</>
+					) : (
+						pa && pa !== 'pages' && <Redirect to={'/404'} />
 					)}
 				</BasePGrid>
 			</BasePage>

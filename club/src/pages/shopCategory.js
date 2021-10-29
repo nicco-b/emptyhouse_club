@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 import { getPageById, setPageLoading } from '../actions/pageActions'
 import Donut from '../components/Donuts/Donut3'
 import { Products } from '../features/shop/products/Products'
-import { NotFound } from '../components/NotFound'
 
 export const ShopCategory = () => {
 	const { category } = useParams()
@@ -22,10 +21,17 @@ export const ShopCategory = () => {
 	const page = useSelector(state => state.pageReducer.page)
 
 	const [error, setError] = useState('')
+	const [pa, setPa] = useState('')
 
 	useEffect(() => {
 		setError(pages.error.message)
 	}, [pages])
+
+	useEffect(() => {
+		const parent = page && page.parent
+		setPa(parent)
+	}, [page])
+	console.log('PA', pa)
 	return (
 		<>
 			<BasePage>
@@ -34,7 +40,7 @@ export const ShopCategory = () => {
 						<Donut />
 					) : error ? (
 						<Redirect to={'/404'} />
-					) : page && page.parent === 'shop' ? (
+					) : pa === 'shop' ? (
 						<>
 							<PageHeader>
 								<PageTitleBox>
@@ -56,7 +62,7 @@ export const ShopCategory = () => {
 							<Products page={page} />
 						</>
 					) : (
-						<NotFound />
+						pa && pa !== 'shop' && <Redirect to={'/404'} />
 					)}
 				</BasePGrid>
 			</BasePage>
