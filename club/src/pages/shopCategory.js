@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import { getPageById, setPageLoading } from '../actions/pageActions'
 import Donut from '../components/Donuts/Donut3'
 import { Products } from '../features/shop/products/Products'
+import { NotFound } from '../components/NotFound'
 
 export const ShopCategory = () => {
 	const { category } = useParams()
@@ -33,15 +34,16 @@ export const ShopCategory = () => {
 						<Donut />
 					) : error ? (
 						<Redirect to={'/404'} />
-					) : (
-						page && (
-							<>
-								<PageHeader>
-									<PageTitleBox>
-										<PageTitle>{page.pageTitle}</PageTitle>
-									</PageTitleBox>
-									<CharacterHeader>
-										{/* <Character
+					) : page && page.parent === 'shop' ? (
+						<>
+							<PageHeader>
+								<PageTitleBox>
+									<PageTitle>
+										{page.pageTitle} {page.parent}
+									</PageTitle>
+								</PageTitleBox>
+								<CharacterHeader>
+									{/* <Character
 										left={'0%'}
 										top={'0%'}
 										width={'calc(10% + 1vmin)'}
@@ -49,11 +51,12 @@ export const ShopCategory = () => {
 										zIndex={'2'}
 										name={'temp'}
 									/> */}
-									</CharacterHeader>
-								</PageHeader>
-								<Products page={page} />
-							</>
-						)
+								</CharacterHeader>
+							</PageHeader>
+							<Products page={page} />
+						</>
+					) : (
+						<NotFound />
 					)}
 				</BasePGrid>
 			</BasePage>

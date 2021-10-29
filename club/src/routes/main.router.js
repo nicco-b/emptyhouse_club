@@ -17,7 +17,7 @@ export const MainRouter = () => {
 			<Route exact path='/' component={Village} />
 			<Route exact path={'/cart'} component={Cart} />
 
-			<Route exact path={`/pages/:category`} component={PageCategory} />
+			<Route exact path={`/pages/:pageId`} component={PageCategory} />
 			<Route exact path='/shop' component={ShopHome} />
 			<Route exact path='/checkout'>
 				{/* <Checkout cart={cart} setCart={setCart} cartTotal={cartTotal} /> */}

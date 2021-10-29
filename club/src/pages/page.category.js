@@ -9,14 +9,14 @@ import Donut from '../components/Donuts/Donut3'
 import { Page } from './Page'
 
 export const PageCategory = () => {
-	const { category } = useParams()
+	const { pageId } = useParams()
 	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(getPageById(category))
+		dispatch(getPageById(pageId))
 		return function cleanup() {
 			dispatch(setPageLoading())
 		}
-	}, [category, dispatch])
+	}, [pageId, dispatch])
 	const pages = useSelector(state => state.pageReducer)
 	const page = useSelector(state => state.pageReducer.page)
 
