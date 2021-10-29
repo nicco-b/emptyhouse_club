@@ -1,5 +1,7 @@
 import { Route, Switch, Redirect } from 'react-router'
 import { PageCategory } from '../pages/page.category'
+import { ShopCategory } from '../pages/shopCategory'
+
 import { ShopHome } from '../features/shop/shop.home'
 
 import Village from '../features/village/village'
@@ -25,7 +27,7 @@ export const MainRouter = () => {
 				<SuccessPage />
 			</Route>
 
-			<Route exact path={`/shop/:category`} component={PageCategory} />
+			<Route exact path={`/shop/:category`} component={ShopCategory} />
 			<Route exact path={`/shop/:category/:id`} component={ProductDetail} />
 			<Route path='/404' component={NotFound} />
 
