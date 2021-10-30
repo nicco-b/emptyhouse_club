@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 	let db_connect = db.getDb()
-	// console.log(req.params)
+	// console.log(req)
 	let query = { pageTitle: req.params.id, live: true }
 	db_connect.collection('pages').findOne(query, function (err, result) {
 		if (err) {

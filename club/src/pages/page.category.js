@@ -12,7 +12,7 @@ export const PageCategory = () => {
 	const { pageId } = useParams()
 	const dispatch = useDispatch()
 	useEffect(() => {
-		dispatch(getPageById(pageId))
+		dispatch(getPageById(pageId, 'pages'))
 		return function cleanup() {
 			dispatch(setPageLoading())
 		}

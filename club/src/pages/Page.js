@@ -9,6 +9,8 @@ export const Page = ({ page }) => {
 				<FaqPage />
 			) : page.pageTitle === 'about' ? (
 				<AboutPage page={page} />
+			) : page.pageTitle === 'f' ? (
+				'hello f u'
 			) : (
 				<>no page data</>
 			)}

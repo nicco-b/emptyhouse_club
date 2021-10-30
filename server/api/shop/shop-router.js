@@ -77,6 +77,7 @@ router.get('/:category', async (req, res) => {
 })
 
 router.get('/:category/:id', async (req, res) => {
+	console.log(req.params)
 	const id = await req.params.id
 
 	function checkId(ids) {
