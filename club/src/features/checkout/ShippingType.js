@@ -74,35 +74,38 @@ export const ShippingType = ({
 		change(v)
 		// SetShippingTypeInit(value)
 	}
+	const options = [
+		{
+			id: 1,
+			value: '50',
+			label: '$0.50 without tracking',
+		},
+		{
+			id: 2,
+			value: '500',
+			label: '$5.00 USPS Priority Mail',
+		},
+	]
 	return (
 		<Form onSubmit={() => setPay(true)}>
 			<legend>choose shipping option</legend>
 			<RadioGroupBox>
-				<RadioGroup.Root onValueChange={v => onChange(v)} defaultValue='50' aria-label='View  density'>
-					<Label htmlFor='r1'>
-						<Flex>
-							<StyledRadio value='50' id='r1'>
-								<StyledIndicator />
-							</StyledRadio>
-							<TextBox>$0.50 without tracking</TextBox>
-						</Flex>
-					</Label>
-					<Label htmlFor='r2'>
-						<Flex>
-							<StyledRadio onValueChange={onChange} value='500' id='r2'>
-								<StyledIndicator />
-							</StyledRadio>
-							<TextBox>$5.00 USPS Priority Mail</TextBox>
-						</Flex>
-					</Label>
-					<Label htmlFor='r3'>
-						<Flex>
-							<StyledRadio onValueChange={onChange} value='1000' id='r3'>
-								<StyledIndicator />
-							</StyledRadio>
-							<TextBox>$10.00 USPS Overnight</TextBox>
-						</Flex>
-					</Label>
+				<RadioGroup.Root
+					onValueChange={v => onChange(v)}
+					defaultValue={options[0].value}
+					aria-label='Shipping Options'>
+					{options.map(ea => {
+						return (
+							<Label htmlFor={ea.id}>
+								<Flex>
+									<StyledRadio value={ea.value} id={ea.id}>
+										<StyledIndicator />
+									</StyledRadio>
+									<TextBox>{ea.label}</TextBox>
+								</Flex>
+							</Label>
+						)
+					})}
 				</RadioGroup.Root>
 			</RadioGroupBox>
 			{/* 
